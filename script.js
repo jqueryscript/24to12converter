@@ -79,22 +79,62 @@ document.addEventListener('DOMContentLoaded', () => {
     function handle24hInput(e) {
         const input = e.target;
         let value = input.value;
-        let digits = value.replace(/[^0-9]/g, '');
+        const oldCursor = input.selectionStart;
+        let targetCursor = oldCursor;
+
+        // 1. Get raw digits
+        const rawDigits = value.replace(/[^0-9]/g, '');
+        const h = rawDigits.substring(0, 2);
+        const m = rawDigits.substring(2, 4);
+
         let formattedValue = '';
 
-        if (digits.length > 0) {
-            formattedValue += digits.substring(0, 2);
-            if (parseInt(formattedValue, 10) > 23) formattedValue = '23';
-            if (digits.length >= 2) formattedValue += ':';
-            if (digits.length > 2) {
-                let minutes = digits.substring(2, 4);
-                if (parseInt(minutes, 10) > 59) minutes = '59';
+        if (rawDigits.length > 0) {
+            // Format Hours
+            let hours = h;
+            if (parseInt(h, 10) > 23) {
+                hours = '23';
+            }
+            formattedValue += hours;
+
+            // Add colon intelligently
+            if (rawDigits.length > 2 || (rawDigits.length === 2 && oldCursor > 1)) {
+                formattedValue += ':';
+            }
+
+            // Format Minutes
+            if (rawDigits.length > 2) {
+                let minutes = m;
+                if (parseInt(m, 10) > 59) {
+                    minutes = '59';
+                }
                 formattedValue += minutes;
             }
         }
+
+        // 2. Update the input value and cursor position
         input.value = formattedValue;
-        if (formattedValue.length === 5) handleConversion();
-        else displayResult('');
+
+        // Recalculate cursor position
+        if (oldCursor === 2 && value.length < formattedValue.length) {
+            // When colon is auto-added
+            targetCursor = 3;
+        } else if (oldCursor === 3 && value.length > formattedValue.length && value.charAt(2) === ':') {
+            // When deleting the colon
+            targetCursor = 2;
+        } else {
+            targetCursor = oldCursor + (formattedValue.length - value.length);
+        }
+
+        input.setSelectionRange(targetCursor, targetCursor);
+
+        // 3. Trigger conversion if complete
+        if (formattedValue.length === 5) {
+            handleConversion();
+        } else {
+            displayResult('');
+            clearError();
+        }
     }
 
 

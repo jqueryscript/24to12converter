@@ -9,7 +9,7 @@
     <meta name="description" content="The best tool to instantly convert 24-hour time to 12-hour AM/PM format and vice-versa. Fast, free, and easy to use. Supports military time conversion.">
     <meta name="keywords" content="24 hour to 12 hour converter, 12 hour to 24 hour converter, time converter, military time converter, 24h to 12h, time format, am/pm">
     <link rel="canonical" href="https://www.24to12converter.com/">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Ccircle cx='12' cy='12' r='10' /%3E%3Cpolyline points='12 6 12 12 16 14' /%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -150,18 +150,18 @@
                             <label for="time-input" class="sr-only">Time Input</label>
                             <input type="text" id="time-input" placeholder="e.g., 18:30 or 1830" maxlength="5" class="w-full p-4 text-center text-2xl font-mono bg-slate-100 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <button id="swap-btn" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-slate-500 hover:text-blue-600 rounded-full hover:bg-slate-200 transition-colors" aria-label="Swap conversion direction">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left" aria-hidden="true"%3E%3Cpath d="m16 3 4 4-4 4"/%3E%3Cpath d="M20 7H4"/%3E%3Cpath d="m8 21-4-4 4-4"/%3E%3Cpath d="M4 17h16"/%3E%3C/svg%3E
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left" aria-hidden="true"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
                             </button>
                         </div>
                         <button id="convert-btn" class="w-full mt-4 py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors cursor-pointer">Convert</button>
                         <div class="result-container mt-6 text-center min-h-[60px]">
-                            <p id="result-text" class="text-3xl font-bold text-blue-600" aria-live="polite"%3E%3C/p%3E
+                            <p id="result-text" class="text-3xl font-bold text-blue-600" aria-live="polite"></p>
                             <button id="copy-btn" class="hidden mt-2 inline-flex items-center gap-2 py-2 px-4 bg-slate-200 font-medium rounded-lg hover:bg-slate-300 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"%3E%3Crect width="14" height="14" x="8" y="8" rx="2" ry="2"/%3E%3Cpath d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/%3E%3C/svg%3E
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                                 <span>Copy</span>
                             </button>
                         </div>
-                        <p id="error-message" class="error text-center text-red-500 mt-2" aria-live="assertive"%3E%3C/p%3E
+                        <p id="error-message" class="error text-center text-red-500 mt-2" aria-live="assertive"></p>
                     </div>
                     <div class="text-center mt-6 space-x-2">
                         <span class="text-sm text-slate-500">Examples:</span>
@@ -175,38 +175,34 @@
         </div>
 
         <!-- Features Section -->
-        <div class="bg-white">
+        <div class="bg-white py-16 md:py-24">
             <div class="container mx-auto px-4">
-                <section id="features" class="py-16 md:py-24" aria-labelledby="features-heading">
-                    <h2 id="features-heading" class="text-2xl md:text-3xl font-bold text-center">Features</h2>
-                    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
-                        <div class="card flex items-start gap-4 p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <svg class="lucide flex-shrink-0 w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%3E%3Ccircle cx="12" cy="12" r="10" /%3E%3Cpolyline points="12 6 12 12 16 14" /%3E%3C/svg%3E
-                            <div>
-                                <h3 class="font-semibold">Instant Conversion</h3>
-                                <p class="text-slate-600 text-sm mt-1">Get the 12-hour time equivalent as you type, with no delay.</p>
+                <section id="features" aria-labelledby="features-heading">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 id="features-heading" class="text-2xl md:text-3xl font-bold">A Versatile and User-Friendly Time Converter</h2>
+                        <p class="mt-4 text-slate-600">Our tool is packed with features designed to make time conversion effortless and accurate.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
+                        <div class="card text-center p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <div class="flex justify-center mb-4">
+                                <svg class="lucide h-10 w-10 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
                             </div>
+                            <h3 class="font-semibold">Bidirectional Conversion</h3>
+                            <p class="text-slate-600 text-sm mt-1">Instantly swap between 24-hour to 12-hour and 12-hour to 24-hour modes with a single click.</p>
                         </div>
-                        <div class="card flex items-start gap-4 p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <svg class="lucide flex-shrink-0 w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%3E%3Cpath d="M9.93 2.07a2 2 0 0 0-1.86 0L6.6 3.53a2 2 0 0 1-1.86 0L3.27 2.07a2 2 0 0 0-1.86 0L.6 3.53a2 2 0 0 0 0 3.73l.81 1.46a2 2 0 0 1 0 1.86l-.81 1.46a2 2 0 0 0 0 3.73l.81 1.46a2 2 0 0 0 1.86 0l1.47-1.46a2 2 0 0 1 1.86 0l1.47 1.46a2 2 0 0 0 1.86 0l1.47-1.46a2 2 0 0 1 1.86 0l1.47 1.46a2 2 0 0 0 1.86 0l.81-1.46a2 2 0 0 0 0-3.73l-.81-1.46a2 2 0 0 1 0-1.86l.81-1.46a2 2 0 0 0 0-3.73l-.81-1.46a2 2 0 0 0-1.86 0L18.8 3.53a2 2 0 0 1-1.86 0l-1.47-1.46a2 2 0 0 0-1.86 0L12 3.53a2 2 0 0 1-1.86 0L8.67 2.07Z" /%3E%3Cpath d="M12 8v8" /%3E%3Cpath d="M8 12h8" /%3E%3C/svg%3E
-                            <div>
-                                <h3 class="font-semibold">Input Masking</h3>
-                                <p class="text-slate-600 text-sm mt-1">Type "1830" and it will be automatically formatted to "18:30" for you.</p>
+                        <div class="card text-center p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <div class="flex justify-center mb-4">
+                                <svg class="lucide h-10 w-10 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"/></svg>
                             </div>
+                            <h3 class="font-semibold">Flexible Input</h3>
+                            <p class="text-slate-600 text-sm mt-1">Enter time with or without colons (e.g., 18:30 or 1830) and with various AM/PM formats (e.g., 6:30pm or 630 pm).</p>
                         </div>
-                        <div class="card flex items-start gap-4 p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <svg class="lucide flex-shrink-0 w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%3E%3Crect width="14" height="14" x="8" y="8" rx="2" ry="2" /%3E%3Cpath d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/%3E%3C/svg%3E
-                            <div>
-                                <h3 class="font-semibold">Copy to Clipboard</h3>
-                                <p class="text-slate-600 text-sm mt-1">Easily copy the converted time with a single click.</p>
+                        <div class="card text-center p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <div class="flex justify-center mb-4">
+                                <svg class="lucide h-10 w-10 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                             </div>
-                        </div>
-                        <div class="card flex items-start gap-4 p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <svg class="lucide flex-shrink-0 w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%3E%3Cpath d="M5 12h14"/%3E%3Cpath d="m12 5 7 7-7 7" /%3E%3C/svg%3E
-                            <div>
-                                <h3 class="font-semibold">Swap Conversion</h3>
-                                <p class="text-slate-600 text-sm mt-1">Switch between 24-hour to 12-hour and 12-hour to 24-hour.</p>
-                            </div>
+                            <h3 class="font-semibold">One-Click Copy</h3>
+                            <p class="text-slate-600 text-sm mt-1">Copy the converted time to your clipboard with a single click, saving you time and effort.</p>
                         </div>
                     </div>
                 </section>
@@ -217,21 +213,55 @@
         <div class="py-16 md:py-24">
             <div class="container mx-auto px-4">
                 <section id="how-to-use" aria-labelledby="how-to-use-heading">
-                    <h2 id="how-to-use-heading" class="text-2xl md:text-3xl font-bold text-center">How To Use It</h2>
-                    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
-                        <div class="card flex items-start gap-4 p-6 bg-white rounded-xl shadow border border-slate-200">
-                            <svg class="lucide flex-shrink-0 w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%3E%3Crect width="20" height="16" x="2" y="4" rx="2" /%3E%3Cpath d="M6 8h.01" /%3E%3Cpath d="M10 8h.01" /%3E%3Cpath d="M14 8h.01" /%3E%3Cpath d="M18 8h.01" /%3E%3Cpath d="M8 12h.01" /%3E%3Cpath d="M12 12h.01" /%3E%3Cpath d="M16 12h.01" /%3E%3Cpath d="M7 16h10" /%3E%3C/svg%3E
-                            <div>
-                                <h3 class="font-semibold">1. Enter Time</h3>
-                                <p class="text-slate-600 text-sm mt-1">Type the time into the input field. The converter is flexible with formats.</p>
-                            </div>
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 id="how-to-use-heading" class="text-2xl md:text-3xl font-bold">Simple Steps to Convert Your Time</h2>
+                        <p class="mt-4 text-slate-600">Our intuitive interface makes time conversion incredibly simple. Here’s how it works:</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12 text-center">
+                        <div class="step">
+                            <div class="flex justify-center items-center w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full text-2xl font-bold">1</div>
+                            <h3 class="font-semibold mt-6">Choose Your Mode</h3>
+                            <p class="text-slate-600 text-sm mt-2">Start with the default 24-hour to 12-hour mode, or click the swap icon to switch to 12-hour to 24-hour conversion.</p>
                         </div>
-                        <div class="card flex items-start gap-4 p-6 bg-white rounded-xl shadow border border-slate-200">
-                            <svg class="lucide flex-shrink-0 w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"%3E%3Cpath d="M20 6 9 17l-5-5" /%3E%3C/svg%3E
-                            <div>
-                                <h3 class="font-semibold">2. View Result</h3>
-                                <p class="text-slate-600 text-sm mt-1">The converted time appears instantly below the input field.</p>
-                            </div>
+                        <div class="step">
+                            <div class="flex justify-center items-center w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full text-2xl font-bold">2</div>
+                            <h3 class="font-semibold mt-6">Enter Your Time</h3>
+                            <p class="text-slate-600 text-sm mt-2">Type the time into the input box. The result appears instantly as you type, with no need to press a button.</p>
+                        </div>
+                        <div class="step">
+                            <div class="flex justify-center items-center w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full text-2xl font-bold">3</div>
+                            <h3 class="font-semibold mt-6">Copy Your Result</h3>
+                            <p class="text-slate-600 text-sm mt-2">Click the copy button that appears with your result to instantly save it to your clipboard for use anywhere.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <section id="use-cases" aria-labelledby="use-cases-heading">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 id="use-cases-heading" class="text-2xl md:text-3xl font-bold">Who is This Tool For?</h2>
+                        <p class="mt-4 text-slate-600">From professionals to everyday users, our converter is perfect for anyone who deals with different time formats.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-12">
+                        <div class="card p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-semibold">International Travelers</h3>
+                            <p class="text-slate-600 text-sm mt-2">Quickly convert flight itineraries, train schedules, and hotel bookings from the 24-hour format used by airlines and railways.</p>
+                        </div>
+                        <div class="card p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-semibold">Global Professionals</h3>
+                            <p class="text-slate-600 text-sm mt-2">Easily schedule international meetings and interpret event times or deadlines from colleagues in different parts of the world.</p>
+                        </div>
+                        <div class="card p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-semibold">Students & Educators</h3>
+                            <p class="text-slate-600 text-sm mt-2">A great utility for students learning about different time-telling systems or for educators teaching the concept of time.</p>
+                        </div>
+                        <div class="card p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-semibold">Military Personnel & Families</h3>
+                            <p class="text-slate-600 text-sm mt-2">Effortlessly convert military time (which uses the 24-hour clock) to standard AM/PM time for civilian use.</p>
                         </div>
                     </div>
                 </section>
@@ -270,7 +300,7 @@
                         </div>
                         <div class="faq-item bg-slate-50 p-4 rounded-lg border border-slate-200">
                             <h3 class="font-semibold">How to convert 24-hour time to 12-hour format?</h3>
-                            <p class="text-slate-600 mt-1">To convert 24-hour time to 12-hour format, follow these simple rules: For hours 00 to 11, keep the hour as is and add \"AM\" (00:00 becomes 12:00 AM). For 12:00, it's 12:00 PM. For hours 13 to 23, subtract 12 from the hour and add \"PM\" (e.g., 13:00 becomes 1:00 PM, 20:00 becomes 8:00 PM). Our converter automates this process for you.</p>
+                            <p class="text-slate-600 mt-1">To convert 24-hour time to 12-hour format, follow these simple rules: For hours 00 to 11, keep the hour as is and add "AM" (00:00 becomes 12:00 AM). For 12:00, it's 12:00 PM. For hours 13 to 23, subtract 12 from the hour and add "PM" (e.g., 13:00 becomes 1:00 PM, 20:00 becomes 8:00 PM). Our converter automates this process for you.</p>
                         </div>
                         <div class="faq-item bg-slate-50 p-4 rounded-lg border border-slate-200">
                             <h3 class="font-semibold">Understanding AM vs. PM</h3>
@@ -292,7 +322,7 @@
                     <h2 id="conversion-chart-heading" class="text-2xl md:text-3xl font-bold text-center">24-Hour to 12-Hour Conversion Chart</h2>
                     <div class="text-center mt-4">
                         <button id="print-btn" class="inline-flex items-center gap-2 py-2 px-4 bg-slate-200 font-medium rounded-lg hover:bg-slate-300 cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer" aria-hidden="true"%3E%3Cpath d="M6 9V2h12v7"/%3E%3Cpath d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/%3E%3Cpath d="M6 14h12v8H6z" /%3E%3C/svg%3E
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z" /></svg>
                             <span>Print Chart</span>
                         </button>
                     </div>
@@ -460,16 +490,46 @@
         </div>
     </main>
 
-    <footer class="mt-24 border-t border-slate-200">
-        <div class="container mx-auto px-4 py-6 text-center text-sm text-slate-500">
-            <nav class="flex justify-center gap-4 mb-4">
-                <a href="#" class="hover:text-blue-600">About</a>
-                <a href="#" class="hover:text-blue-600">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-600">Contact</a>
-            </nav>
+    <footer class="bg-white border-t border-slate-200">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Column 1: Tools -->
+            <div>
+                <h3 class="font-semibold text-slate-900">Tools</h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                    <li><a href="https://www.24to12converter.com/" class="text-slate-600 hover:text-blue-600">24 Hour to 12 Hour</a></li>
+                    <li><a href="https://www.24to12converter.com/" class="text-slate-600 hover:text-blue-600">12 Hour to 24 Hour</a></li>
+                    <li><a href="#conversion-chart" class="text-slate-600 hover:text-blue-600">Conversion Chart</a></li>
+                </ul>
+            </div>
+            <!-- Column 2: Resources -->
+            <div>
+                <h3 class="font-semibold text-slate-900">Resources</h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                    <li><a href="#features" class="text-slate-600 hover:text-blue-600">Features</a></li>
+                    <li><a href="#how-to-use" class="text-slate-600 hover:text-blue-600">How To Use</a></li>
+                    <li><a href="#faq" class="text-slate-600 hover:text-blue-600">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Column 3: About -->
+            <div>
+                <h3 class="font-semibold text-slate-900">About</h3>
+                <p class="mt-4 text-sm text-slate-600">24to12Converter is a free online tool to make time conversion simple and intuitive for everyone.</p>
+            </div>
+            <!-- Column 4: Legal -->
+            <div>
+                <h3 class="font-semibold text-slate-900">Legal</h3>
+                <ul class="mt-4 space-y-2 text-sm">
+                    <li><a href="/privacy.html" class="text-slate-600 hover:text-blue-600">Privacy Policy</a></li>
+                    <li><a href="/terms.html" class="text-slate-600 hover:text-blue-600">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
             <p>&copy; 2025 24to12Converter.com. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
