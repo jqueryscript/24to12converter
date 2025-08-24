@@ -102,21 +102,25 @@ document.addEventListener('DOMContentLoaded', () => {
             digits = digits.substring(0, 4);
         }
 
+        // Only validate and format when we have complete or nearly complete input
         if (digits.length >= 2) {
             let hours = parseInt(digits.substring(0, 2), 10);
             if (hours > 23) {
                 digits = '23' + digits.substring(2);
             }
         }
-        if (digits.length > 2) {
-            let minutes = parseInt(digits.substring(2, 4), 10);
+
+        // Only validate minutes when we have at least 3 digits
+        if (digits.length >= 3) {
+            let minutes = parseInt(digits.substring(2), 10);
             if (minutes > 59) {
                 digits = digits.substring(0, 2) + '59';
             }
         }
 
         let formattedValue = digits;
-        if (digits.length > 2) {
+        // Only add colon when we have at least 3 digits (HH:M or HH:MM)
+        if (digits.length >= 3) {
             formattedValue = `${digits.substring(0, 2)}:${digits.substring(2)}`;
         }
 
