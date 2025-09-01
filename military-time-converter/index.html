@@ -36,6 +36,102 @@
       "description": "Free military time converter with interactive chart for converting between 24-hour military time and 12-hour AM/PM format."
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is military time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Military time is a 24-hour timekeeping system where the day runs from 0000 to 2359 hours. It eliminates AM/PM confusion and is used by military, emergency services, and healthcare professionals worldwide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert military time to standard time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For times 0000-1159: Remove leading zeros and add AM (0000→12:00 AM, 0930→9:30 AM). For 1200-2359: Subtract 1200 and add PM (1300→1:00 PM, 1830→6:30 PM). Our converter automates this process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 0000 mean in military time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "0000 represents midnight (12:00 AM) in military time. It's the start of a new day and is pronounced \"zero hundred hours\" or \"twenty-four hundred hours\" when referring to the previous day's end."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 2400 a valid military time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While sometimes used informally to mean midnight, 2400 is not standard military time. The proper format uses 0000 to represent midnight. The time sequence goes from 2359 to 0000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is military time used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Military time eliminates ambiguity between AM and PM, reduces errors in critical operations, provides international standardization, and ensures precise timekeeping for coordination across time zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I say military time out loud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Read each digit separately: 0830 is \"zero eight thirty hours\", 1345 is \"thirteen forty-five hours\", 0000 is \"zero hundred hours\". The word \"hours\" is typically added at the end in military contexts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you write military time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Military time is typically written as a four-digit number without a colon. The first two digits represent the hour (00-23) and the last two digits represent the minutes (00-59). For example, 2:30 PM is written as 1430."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is military time the same as 24-hour time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are very similar but have a subtle difference in formatting. While both use a 24-hour clock, \"military time\" often refers to the format without a colon (e.g., 1830), whereas \"24-hour time\" is more general and often uses a colon (e.g., 18:30). Our converter handles both formats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is noon in military time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Noon is represented as 1200 in military time. It is pronounced \"twelve hundred hours\". This is the point where the day transitions from AM to PM in the 12-hour system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Zulu Time (Z Time)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zulu Time, or \"Z Time,\" is military-speak for Coordinated Universal Time (UTC), which is the primary time standard by which the world regulates clocks. It is used in military and aviation to ensure all operations are synchronized to the same 24-hour clock, regardless of local time zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are time zones represented in military time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The military uses a system of phonetic alphabet letters to designate time zones. For example, \"J\" (Juliet) refers to the local time zone of the user. \"Z\" (Zulu) refers to UTC. There is a letter for each of the 24 global time zones."
+          }
+        }
+      ]
+    }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT9K7B1B12"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -63,7 +159,7 @@
                 </nav>
 
                 <div class="md:hidden">
-                    <button class="p-2 text-gray-600 hover:text-blue-600">
+                    <button id="mobile-menu-button" class="p-2 text-gray-600 hover:text-blue-600">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
                             <line x1="4" x2="20" y1="12" y2="12"/>
                             <line x1="4" x2="20" y1="6" y2="6"/>
@@ -71,6 +167,15 @@
                         </svg>
                     </button>
                 </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+                <a href="https://www.24to12converter.com/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Home</a>
+                <a href="#features" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Features</a>
+                <a href="#how-to-use" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">How It Works</a>
+                <a href="#use-cases" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Use Cases</a>
+                <a href="#faq" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">FAQ</a>
+                <a href="#military-time-chart" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Military Time Chart</a>
             </div>
         </div>
     </header>
@@ -333,6 +438,46 @@
                                     </h3>
                                     <p class="text-gray-600 pl-9">Read each digit separately: 0830 is "zero eight thirty hours", 1345 is "thirteen forty-five hours", 0000 is "zero hundred hours". The word "hours" is typically added at the end in military contexts.</p>
                                 </div>
+
+                                <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
+                                        <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
+                                        How do you write military time?
+                                    </h3>
+                                    <p class="text-gray-600 pl-9">Military time is typically written as a four-digit number without a colon. The first two digits represent the hour (00-23) and the last two digits represent the minutes (00-59). For example, 2:30 PM is written as 1430.</p>
+                                </div>
+
+                                <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
+                                        <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
+                                        Is military time the same as 24-hour time?
+                                    </h3>
+                                    <p class="text-gray-600 pl-9">They are very similar but have a subtle difference in formatting. While both use a 24-hour clock, "military time" often refers to the format without a colon (e.g., 1830), whereas "24-hour time" is more general and often uses a colon (e.g., 18:30). Our converter handles both formats.</p>
+                                </div>
+
+                                <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
+                                        <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
+                                        What is noon in military time?
+                                    </h3>
+                                    <p class="text-gray-600 pl-9">Noon is represented as 1200 in military time. It is pronounced "twelve hundred hours." This is the point where the day transitions from AM to PM in the 12-hour system.</p>
+                                </div>
+
+                                <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
+                                        <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
+                                        What is Zulu Time (Z Time)?
+                                    </h3>
+                                    <p class="text-gray-600 pl-9">Zulu Time, or "Z Time," is military-speak for Coordinated Universal Time (UTC), which is the primary time standard by which the world regulates clocks. It is used in military and aviation to ensure all operations are synchronized to the same 24-hour clock, regardless of local time zones.</p>
+                                </div>
+
+                                <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
+                                    <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
+                                        <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
+                                        How are time zones represented in military time?
+                                    </h3>
+                                    <p class="text-gray-600 pl-9">The military uses a system of phonetic alphabet letters to designate time zones. For example, "J" (Juliet) refers to the local time zone of the user. "Z" (Zulu) refers to UTC. There is a letter for each of the 24 global time zones.</p>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -489,7 +634,7 @@
                                 <tr class="border-b border-slate-200 hover:bg-slate-50">
                                     <td class="px-6 py-4 font-medium text-slate-900">2100</td>
                                     <td class="px-6 py-4">09:00 PM</td>
-                                    <td class="px-6 py-4 font-medium text-slate-900">2100</td>
+                                    <td class="px-6 py-4 font-medium text-slate-900">2130</td>
                                     <td class="px-6 py-4">09:30 PM</td>
                                 </tr>
                                 <tr class="border-b border-slate-200 hover:bg-slate-50">
