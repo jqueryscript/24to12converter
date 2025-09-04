@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.24to12converter.com/sitemap.xml
