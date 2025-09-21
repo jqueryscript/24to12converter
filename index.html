@@ -61,86 +61,110 @@
     }
     </script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is 00:00 in 12-hour format?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "00:00 in 24-hour format is 12:00 AM in 12-hour format."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is 12:00 in 12-hour format?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "12:00 in 24-hour format is 12:00 PM in 12-hour format."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is 23:59 in 12-hour format?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "23:59 in 24-hour format is 11:59 PM in 12-hour format."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is midnight 12 AM or 12 PM?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Midnight is 12:00 AM, while noon is 12:00 PM."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is 24:00 a valid time?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "While some contexts use it to signify the end of a day, 24:00 is technically not a valid time in the standard 24-hour format. The day ends at 23:59 and the next day starts at 00:00."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is 24-hour time?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "24-hour time, also known as military time, is a timekeeping convention where the day runs from midnight to midnight and is divided into 24 hours. It is indicated by the hours (00-23) and minutes (00-59) without AM/PM designations. For example, 1 PM is 13:00, and 5 PM is 17:00."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How to convert 24-hour time to 12-hour format?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "To convert 24-hour time to 12-hour format, follow these simple rules: For hours 00 to 11, keep the hour as is and add \"AM\" (00:00 becomes 12:00 AM). For 12:00, it's 12:00 PM. For hours 13 to 23, subtract 12 from the hour and add \"PM\" (e.g., 13:00 becomes 1:00 PM, 20:00 becomes 8:00 PM). Our converter automates this process for you."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is 00:00 called in 12 hour time?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "00:00 in 24-hour format is called 12:00 AM in 12-hour time. This represents midnight, the exact moment when one day ends and the next day begins."
-          }
-        },
-        {
-          "@type": "Question",
-          
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YT9K7B1B12"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      "@type": "Question",
+      "name": "What is 00:00 in 12-hour format?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "00:00 in 24-hour format is 12:00 AM in 12-hour format. This represents midnight, the start of a new day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 12:00 in 12-hour format?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "12:00 in 24-hour format is 12:00 PM in 12-hour format. This represents noon, the middle of the day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 23:59 in 12-hour format?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "23:59 in 24-hour format is 11:59 PM in 12-hour format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 24:00 a valid time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While sometimes used to signify day's end, 24:00 isn't standard 24-hour format. The day properly ends at 23:59 and begins at 00:00."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is midnight 12 AM or 12 PM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AM = Ante Meridiem (before midday), PM = Post Meridiem (after midday). AM covers Midnight is 12:00 AM, while noon is 12:00 PM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between 24-hour and 12-hour time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "24-hour time uses 00-23 continuously, while 12-hour time uses 1-12 with AM/PM designations. 24-hour eliminates ambiguity for international use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert 24-hour to 12-hour manually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For hours 00-11: add AM (00:00→12:00 AM). For 12:00: it's 12:00 PM. For 13-23: subtract 12 and add PM (13:00→1:00 PM). Minutes stay the same."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 00:00 called in 12 hour time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "00:00 in 24-hour format is called 12:00 AM in 12-hour time. This represents midnight, the exact moment when one day ends and the next day begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do we use AM/PM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AM/PM is used in 12-hour time format to distinguish between morning (AM) and afternoon/evening (PM) hours. This system originated from ancient civilizations that divided the day into two 12-hour periods based on the position of the sun, making it easier to reference time without confusion between day and night hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does AM and PM stand for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AM = Ante Meridiem (before midday), PM = Post Meridiem (after midday). AM covers midnight to noon, PM covers noon to midnight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some countries use the 24-hour format?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 24-hour clock avoids confusion between morning and evening times and is widely used in Europe, transportation, and digital systems."
+      }
+    }
+  ]
+}
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT9K7B1B12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-YT9K7B1B12');
-</script>
+      gtag('config', 'G-YT9K7B1B12');
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-800 transition-colors duration-300">
 
