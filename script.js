@@ -1,19 +1,23 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Page Type Detection ---
+    const isMilitaryTimeConverter = window.location.pathname.includes('/military-time-converter/');
+    const isTimeChart = window.location.pathname.includes('/time-chart/');
+
     // --- DOM Elements ---
     const timeInput = document.getElementById('time-input');
     const convertBtn = document.getElementById('convert-btn');
     const resultText = document.getElementById('result-text');
     const copyBtn = document.getElementById('copy-btn');
     const errorMessage = document.getElementById('error-message');
-    const exampleBtns = document.querySelectorAll('.example-btn');
     const swapBtn = document.getElementById('swap-btn');
 
-    // --- UI Text Elements ---
+    // --- UI Text Elements (may not exist on all pages) ---
     const fromFormat = document.getElementById('from-format');
     const toFormat = document.getElementById('to-format');
     const subHeadingFrom = document.querySelector('.from-format-text');
     const subHeadingTo = document.querySelector('.to-format-text');
+    const exampleBtns = document.querySelectorAll('.example-btn');
 
     // --- State ---
     let is24to12 = true;
@@ -25,6 +29,66 @@ document.addEventListener('DOMContentLoaded', () => {
         check: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>`
     };
 
+    // --- Military Time Converter Specific Logic ---
+    function handleMilitaryTimeInput() {
+        const input = timeInput;
+        const originalValue = input.value;
+
+        // Only allow digits
+        let digits = originalValue.replace(/[^0-9]/g, '');
+
+        // Limit to 4 digits
+        if (digits.length > 4) {
+            digits = digits.substring(0, 4);
+        }
+
+        // Validate hours if we have at least 2 digits
+        if (digits.length >= 2) {
+            let hours = parseInt(digits.substring(0, 2), 10);
+            if (hours > 23) {
+                digits = '23' + digits.substring(2);
+            }
+        }
+
+        // Validate minutes if we have exactly 4 digits
+        if (digits.length === 4) {
+            let minutes = parseInt(digits.substring(2, 4), 10);
+            if (minutes > 59) {
+                digits = digits.substring(0, 2) + '59';
+            }
+        }
+
+        input.value = digits;
+
+        // Auto-convert when we have exactly 4 digits
+        if (digits.length === 4) {
+            setTimeout(() => {
+                handleConversion();
+            }, 100); // Small delay to ensure the input value is updated
+        }
+    }
+
+    function handleMilitaryTimeKeyDown(e) {
+        const key = e.key;
+        const isDigit = /[0-9]/.test(key);
+        const isAllowedControlKey = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter'].includes(key);
+        const isPaste = (e.ctrlKey || e.metaKey) && key === 'v';
+
+        if (!isDigit && !isAllowedControlKey && !isPaste) {
+            e.preventDefault();
+        }
+
+        // Allow replacement if text is selected
+        const selection = window.getSelection();
+        const selectedText = selection.toString();
+        const hasSelection = selectedText.length > 0;
+
+        // Prevent input if we already have 4 digits and no text is selected
+        if (timeInput.value.length >= 4 && isDigit && !hasSelection) {
+            e.preventDefault();
+        }
+    }
+
     // --- UI Update Logic ---
     function updateUI() {
         clearAll();
@@ -34,24 +98,24 @@ document.addEventListener('DOMContentLoaded', () => {
         timeInput.removeEventListener('input', handle12hInput);
 
         if (is24to12) {
-            fromFormat.textContent = '24-Hour';
-            toFormat.textContent = '12-Hour';
-            subHeadingFrom.textContent = '24-hour time';
-            subHeadingTo.textContent = '12-hour AM/PM format';
+            if (fromFormat) fromFormat.textContent = '24-Hour';
+            if (toFormat) toFormat.textContent = '12-Hour';
+            if (subHeadingFrom) subHeadingFrom.textContent = '24-hour time';
+            if (subHeadingTo) subHeadingTo.textContent = '12-hour AM/PM format';
             timeInput.placeholder = 'e.g., 18:30 or 1830';
             timeInput.maxLength = 5;
-            updateExamples(['00:00', '12:00', '18:30', '23:59']);
+            if (exampleBtns.length > 0) updateExamples(['00:00', '12:00', '18:30', '23:59']);
             // Add listeners for 24h mode
             timeInput.addEventListener('keydown', handle24hKeyDown);
             timeInput.addEventListener('input', handle24hInputFormat);
         } else {
-            fromFormat.textContent = '12-Hour';
-            toFormat.textContent = '24-Hour';
-            subHeadingFrom.textContent = '12-hour AM/PM time';
-            subHeadingTo.textContent = '24-hour format';
+            if (fromFormat) fromFormat.textContent = '12-Hour';
+            if (toFormat) toFormat.textContent = '24-Hour';
+            if (subHeadingFrom) subHeadingFrom.textContent = '12-hour AM/PM time';
+            if (subHeadingTo) subHeadingTo.textContent = '24-hour format';
             timeInput.placeholder = 'e.g., 6:30 PM or 0630pm';
             timeInput.maxLength = 10;
-            updateExamples(['12:00 AM', '12:00 PM', '6:30 PM', '11:59 PM']);
+            if (exampleBtns.length > 0) updateExamples(['12:00 AM', '12:00 PM', '6:30 PM', '11:59 PM']);
             // Add listener for 12h mode
             timeInput.addEventListener('input', handle12hInput);
         }
@@ -71,7 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         timeInput.value = '';
         resultText.textContent = '';
         copyBtn.classList.add('hidden');
-        errorMessage.textContent = '';
+        if (errorMessage) {
+            errorMessage.textContent = '';
+        }
     }
 
     // --- Input Handling: The Robust Solution ---
@@ -165,8 +231,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const input = timeInput.value.trim();
         if (!input) return;
 
-        const result = is24to12 ? convert24to12(input) : convert12to24(input);
-        
+        let result;
+        if (isMilitaryTimeConverter) {
+            // Military Time Converter always converts 24h to 12h
+            result = convert24to12(input);
+        } else {
+            // Main converter can swap between modes
+            result = is24to12 ? convert24to12(input) : convert12to24(input);
+        }
+
         if (result.error) {
             showError(result.error);
             displayResult('');
@@ -252,47 +325,78 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showError(message) {
-        errorMessage.textContent = message;
+        if (errorMessage) {
+            errorMessage.textContent = message;
+        }
     }
 
     function clearError() {
-        errorMessage.textContent = '';
+        if (errorMessage) {
+            errorMessage.textContent = '';
+        }
     }
 
     // --- Event Listeners ---
-    swapBtn.addEventListener('click', () => {
-        is24to12 = !is24to12;
-        updateUI();
-    });
+    if (swapBtn) {
+        swapBtn.addEventListener('click', () => {
+            is24to12 = !is24to12;
+            updateUI();
+        });
+    }
 
-    convertBtn.addEventListener('click', handleConversion);
-    timeInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault(); // Prevent form submission
-            handleConversion();
-        }
-        if (e.key === 'Escape') clearAll();
-    });
+    if (convertBtn) {
+        convertBtn.addEventListener('click', handleConversion);
+    }
+    if (timeInput) {
+        timeInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Prevent form submission
+                handleConversion();
+            }
+            if (e.key === 'Escape') clearAll();
+        });
+    }
 
     exampleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            timeInput.value = btn.dataset.time;
-            handleConversion();
-            timeInput.focus();
+            if (timeInput) {
+                timeInput.value = btn.dataset.time;
+                handleConversion();
+                timeInput.focus();
+            }
         });
     });
 
-    copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(resultText.textContent).then(() => {
-            copyBtn.innerHTML = `${ICONS.check} <span>Copied!</span>`;
-            setTimeout(() => {
-                copyBtn.innerHTML = `${ICONS.copy} <span>Copy</span>`;
-            }, COPY_MESSAGE_DURATION);
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            if (resultText) {
+                navigator.clipboard.writeText(resultText.textContent).then(() => {
+                    copyBtn.innerHTML = `${ICONS.check} <span>Copied!</span>`;
+                    setTimeout(() => {
+                        copyBtn.innerHTML = `${ICONS.copy} <span>Copy</span>`;
+                    }, COPY_MESSAGE_DURATION);
+                });
+            }
         });
-    });
+    }
 
     // --- Initial Load ---
-    updateUI(); // This will set up the initial listeners
+    if (isMilitaryTimeConverter) {
+        // Military Time Converter: Set up specific listeners for 4-digit military time input
+        if (timeInput) {
+            timeInput.addEventListener('keydown', handleMilitaryTimeKeyDown);
+            timeInput.addEventListener('input', handleMilitaryTimeInput);
+            timeInput.placeholder = 'e.g., 1830';
+            timeInput.maxLength = 4;
+        }
+    } else if (fromFormat || toFormat || subHeadingFrom || subHeadingTo) {
+        // Main converter page: Full UI with swap functionality
+        updateUI(); // This will set up the initial listeners
+    } else if (timeInput) {
+        // Other pages with basic time input
+        timeInput.addEventListener('keydown', handle24hKeyDown);
+        timeInput.addEventListener('input', handle24hInputFormat);
+    }
 
     // --- Print Button Logic ---
     const printBtn = document.getElementById('print-btn');
