@@ -7,3 +7,6 @@ prompt.md
 .claude/
 CLAUDE.md
 seo.md
+DEVELOPMENT.md
+lint-html.sh
+bugfix.md
