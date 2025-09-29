@@ -15,9 +15,26 @@ fi
 # Array of HTML files to lint
 files=(
     "index.html"
-    "de/index.html"
     "military-time-converter/index.html"
     "time-chart/index.html"
+    "de/index.html"
+    "de/military-time-converter/index.html"
+    "de/time-chart/index.html"
+    "es/index.html"
+    "es/military-time-converter/index.html"
+    "es/time-chart/index.html"
+    "fr/index.html"
+    "fr/military-time-converter/index.html"
+    "fr/time-chart/index.html"
+    "pt/index.html"
+    "pt/military-time-converter/index.html"
+    "pt/time-chart/index.html"
+    "ja/index.html"
+    "ja/military-time-converter/index.html"
+    "ja/time-chart/index.html"
+    "zh-tw/index.html"
+    "zh-tw/military-time-converter/index.html"
+    "zh-tw/time-chart/index.html"
 )
 
 error_count=0
