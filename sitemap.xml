@@ -65,6 +65,43 @@
         <priority>0.5</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.24to12converter.com/time-chart/" />
         <xhtml:link rel="alternate" hreflang="de" href="https://www.24to12converter.com/de/time-chart/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.24to12converter.com/es/time-chart/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/time-chart/" />
+    </url>
+
+    <!-- Spanish Homepage -->
+    <url>
+        <loc>https://www.24to12converter.com/es/</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.24to12converter.com/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.24to12converter.com/de/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.24to12converter.com/es/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/" />
+    </url>
+
+    <!-- Spanish Military Time Converter -->
+    <url>
+        <loc>https://www.24to12converter.com/es/military-time-converter/</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.24to12converter.com/military-time-converter/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.24to12converter.com/de/military-time-converter/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.24to12converter.com/es/military-time-converter/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/military-time-converter/" />
+    </url>
+
+    <!-- Spanish Time Chart -->
+    <url>
+        <loc>https://www.24to12converter.com/es/time-chart/</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.24to12converter.com/time-chart/" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.24to12converter.com/de/time-chart/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.24to12converter.com/es/time-chart/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/time-chart/" />
     </url>
 
