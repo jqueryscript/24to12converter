@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>군사 시간 변환기 및 차트 | 무료 도구</title>
+    <meta name="description" content="무료 군사 시간 변환기 및 인터랙티브 차트. 24시간 군사 시간과 12시간 AM/PM 형식을 즉시 변환합니다.">
+    <meta name="keywords" content="군사 시간 변환기, 24시간 시간, 군사 시간, 군사 시간 차트, 시간 변환">
+    <meta name="google-site-verification" content="_r6g5g5LjQucBxV5zl1aTW0k0A8eApMl-Rr4qplCMM0" />
+    <link rel="canonical" href="https://www.24to12converter.com/ko/military-time-converter/">
+    <link rel="alternate" hreflang="en" href="https://www.24to12converter.com/military-time-converter/" />
+    <link rel="alternate" hreflang="de" href="https://www.24to12converter.com/de/military-time-converter/" />
+    <link rel="alternate" hreflang="es" href="https://www.24to12converter.com/es/military-time-converter/" />
+    <link rel="alternate" hreflang="fr" href="https://www.24to12converter.com/fr/military-time-converter/" />
+    <link rel="alternate" hreflang="pt" href="https://www.24to12converter.com/pt/military-time-converter/" />
+    <link rel="alternate" hreflang="ja" href="https://www.24to12converter.com/ja/military-time-converter/" />
+    <link rel="alternate" hreflang="ko" href="https://www.24to12converter.com/ko/military-time-converter/" />
+    <link rel="alternate" hreflang="zh-tw" href="https://www.24to12converter.com/zh-tw/military-time-converter/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/military-time-converter/" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Microsoft specific -->
+    <meta name="msapplication-TileColor" content="#00897b">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#00897b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="24to12Converter">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.24to12converter.com/ko/military-time-converter/">
+    <meta property="og:title" content="군사 시간 변환기 | 24to12Converter.com">
+    <meta property="og:description" content="무료 군사 시간 변환기 및 인터랙티브 차트. 24시간 군사 시간과 12시간 AM/PM 형식을 즉시 변환합니다.">
+    <meta property="og:image" content="https://www.24to12converter.com/web-app-manifest-512x512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.24to12converter.com/ko/military-time-converter/">
+    <meta property="twitter:title" content="군사 시간 변환기 | 24to12Converter.com">
+    <meta property="twitter:description" content="무료 군사 시간 변환기 및 인터랙티브 차트. 24시간 군사 시간과 12시간 AM/PM 형식을 즉시 변환합니다.">
+    <meta property="twitter:image" content="https://www.24to12converter.com/web-app-manifest-512x512.png">
+
+    <link rel="stylesheet" href="../../dist/app.css?v08242025">
+</head>
+<body class="bg-slate-50 text-slate-800 transition-colors duration-300">
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="logo">
+                    <a href="https://www.24to12converter.com/" class="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                        24시간에서 12시간으로<span class="text-blue-600">변환기</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/ko/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">12시간 변환기</a>
+                    <a href="/ko/military-time-converter/" class="text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors">군사 시간 변환</a>
+                    <a href="/ko/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">시간 변환 차트</a>
+                    <div class="relative">
+                        <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                            <span>한국어</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                            <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="/de/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deutsch</a>
+                            <a href="/es/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Español</a>
+                            <a href="/fr/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Français</a>
+                            <a href="/pt/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Português</a>
+                            <a href="/ja/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                            <a href="/ko/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium">한국어</a>
+                            <a href="/zh-tw/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-gray-600 hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                            <line x1="4" x2="20" y1="12" y2="12"/>
+                            <line x1="4" x2="20" y1="6" y2="6"/>
+                            <line x1="4" x2="20" y1="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+                <a href="/ko/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">12시간 변환기</a>
+                <a href="/ko/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-blue-600 hover:bg-gray-50 hover:text-blue-600">군사 시간 변환</a>
+                <a href="/ko/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">시간 변환 차트</a>
+                <div class="border-t border-gray-200">
+                    <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                        <span class="ml-1">언어: 한국어</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-12 md:py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">군사 시간 변환기</h1>
+                    <p class="text-lg md:text-xl text-blue-100 mb-8">24시간 군사 시간과 12시간 AM/PM 형식을 정확하게 변환합니다. 군인, 파일럿, 의료 전문가를 위한 필수 도구입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Converter Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 md:p-8">
+                        <div class="text-center mb-8">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-2">군사 시간 변환기</h2>
+                            <p class="text-gray-600">24시간 군사 시간을 12시간 형식으로 또는 그 반대로 변환합니다</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- 24-hour to 12-hour conversion -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">24시간 군사 시간</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="military-input" placeholder="예: 1430 또는 14:30" maxlength="5"
+                                           class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                    <button id="convert-military-btn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                        변환
+                                    </button>
+                                </div>
+                                <div id="military-result" class="mt-2 p-3 bg-blue-50 rounded-lg text-blue-900 font-medium hidden"></div>
+                            </div>
+
+                            <div class="relative">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-gray-300"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-2 bg-white text-gray-500">또는</span>
+                                </div>
+                            </div>
+
+                            <!-- 12-hour to 24-hour conversion -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">12시간 형식</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="civilian-input" placeholder="예: 2:30 PM" maxlength="8"
+                                           class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                    <button id="convert-civilian-btn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                        변환
+                                    </button>
+                                </div>
+                                <div id="civilian-result" class="mt-2 p-3 bg-green-50 rounded-lg text-green-900 font-medium hidden"></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+                            <h3 class="font-semibold text-gray-900 mb-2">빠른 참조</h3>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <span class="font-medium">자정:</span> 0000 또는 2400
+                                </div>
+                                <div>
+                                    <span class="font-medium">정오:</span> 1200
+                                </div>
+                                <div>
+                                    <span class="font-medium">오전 1시:</span> 0100
+                                </div>
+                                <div>
+                                    <span class="font-medium">오후 1시:</span> 1300
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Military Time Chart Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">군사 시간 차트</h2>
+                        <p class="text-lg text-gray-600">24시간 군사 시간과 12시간 형식의 완전한 변환 차트</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">군사 시간</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">12시간 형식</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">발음</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">군사 시간</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">12시간 형식</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">발음</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr><td class="px-6 py-4 whitespace-nowrap font-medium">0000</td><td class="px-6 py-4">12:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 백</td><td class="px-6 py-4 whitespace-nowrap font-medium">1200</td><td class="px-6 py-4">12:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">투블러 헌드레드</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 whitespace-nowrap font-medium">0100</td><td class="px-6 py-4">1:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제원 원</td><td class="px-6 py-4 whitespace-nowrap font-medium">1300</td><td class="px-6 py-4">1:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">트리블러 헌드레드</td></tr>
+                                    <tr><td class="px-6 py-4 whitespace-nowrap font-medium">0200</td><td class="px-6 py-4">2:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 투</td><td class="px-6 py-4 whitespace-nowrap font-medium">1400</td><td class="px-6 py-4">2:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">포블러 헌드레드</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 whitespace-nowrap font-medium">0300</td><td class="px-6 py-4">3:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 쓰리</td><td class="px-6 py-4 whitespace-nowrap font-medium">1500</td><td class="px-6 py-4">3:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">파이브블러 헌드레드</td></tr>
+                                    <tr><td class="px-6 py-4 whitespace-nowrap font-medium">0400</td><td class="px-6 py-4">4:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 포</td><td class="px-6 py-4 whitespace-nowrap font-medium">1600</td><td class="px-6 py-4">4:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">식스블러 헌드레드</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 whitespace-nowrap font-medium">0500</td><td class="px-6 py-4">5:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 파이브</td><td class="px-6 py-4 whitespace-nowrap font-medium">1700</td><td class="px-6 py-4">5:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">세븐블러 헌드레드</td></tr>
+                                    <tr><td class="px-6 py-4 whitespace-nowrap font-medium">0600</td><td class="px-6 py-4">6:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 식스</td><td class="px-6 py-4 whitespace-nowrap font-medium">1800</td><td class="px-6 py-4">6:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">에잇블러 헌드레드</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 whitespace-nowrap font-medium">0700</td><td class="px-6 py-4">7:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 세븐</td><td class="px-6 py-4 whitespace-nowrap font-medium">1900</td><td class="px-6 py-4">7:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">나인블러 헌드레드</td></tr>
+                                    <tr><td class="px-6 py-4 whitespace-nowrap font-medium">0800</td><td class="px-6 py-4">8:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 에잇</td><td class="px-6 py-4 whitespace-nowrap font-medium">2000</td><td class="px-6 py-4">8:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">투블러 헌드레드</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 whitespace-nowrap font-medium">0900</td><td class="px-6 py-4">9:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">제로 나인</td><td class="px-6 py-4 whitespace-nowrap font-medium">2100</td><td class="px-6 py-4">9:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">투원블러 헌드레드</td></tr>
+                                    <tr><td class="px-6 py-4 whitespace-nowrap font-medium">1000</td><td class="px-6 py-4">10:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">텐 헌드레드</td><td class="px-6 py-4 whitespace-nowrap font-medium">2200</td><td class="px-6 py-4">10:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">투투블러 헌드레드</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 whitespace-nowrap font-medium">1100</td><td class="px-6 py-4">11:00 AM</td><td class="px-6 py-4 text-sm text-gray-500">엘레븐 헌드레드</td><td class="px-6 py-4 whitespace-nowrap font-medium">2300</td><td class="px-6 py-4">11:00 PM</td><td class="px-6 py-4 text-sm text-gray-500">투쓰리블러 헌드레드</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">군사 시간이란?</h3>
+                            <p class="text-gray-600 mb-4">군사 시간은 24시간제를 사용하는 시간 표기법으로, 오전과 오후를 구분하지 않습니다. 이 시스템은 군대, 항공, 응급 서비스에서 정확성을 위해 사용됩니다.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>• 하루를 24시간으로 표시 (0000-2359)</li>
+                                <li>• AM/PM 구분이 필요 없음</li>
+                                <li>• 국제적으로 표준화됨</li>
+                                <li>• 오류 가능성 감소</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">군사 시간 읽는 법</h3>
+                            <p class="text-gray-600 mb-4">군사 시간은 네 자리 숫자로 읽으며, 처음 두 자리는 시간, 마지막 두 자리는 분을 나타냅니다.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>• 1430 = "십사 서른" (2:30 PM)</li>
+                                <li>• 0800 = "제로 에이트 헌드레드" (8:00 AM)</li>
+                                <li>• 0000 = "제로 백" (자정)</li>
+                                <li>• 2400 = "투블러 헌드레드" (자정)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">24to12converter<span class="text-blue-400">.com</span></h3>
+                    <p class="text-gray-400 mb-6 max-w-md">24시간 형식을 표준 12시간 AM/PM 형식으로 빠르고 쉽게 변환합니다. 여행자, 전문가, 학생, 다른 시간 형식으로 작업하는 모든 사람에게 완벽합니다.</p>
+                </div>
+
+                <!-- Tools -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">도구</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/ko/" class="text-gray-400 hover:text-white transition-colors duration-300">12시간 변환기</a></li>
+                        <li><a href="/ko/military-time-converter/" class="text-gray-400 hover:text-white transition-colors duration-300">군사 시간 변환</a></li>
+                        <li><a href="/ko/time-chart/" class="text-gray-400 hover:text-white transition-colors duration-300">시간 변환 차트</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">빠른 링크</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">기능</a></li>
+                        <li><a href="#how-to-use" class="text-gray-400 hover:text-white transition-colors duration-300">사용법</a></li>
+                        <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors duration-300">사용 사례</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors duration-300">FAQ</a></li>
+                        <li><a href="#conversion-chart" class="text-gray-400 hover:text-white transition-colors duration-300">변환 차트</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">회사</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">개인정보 정책</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white transition-colors duration-300">이용 약관</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">문의하기</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/jqueryscript" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-300" target="_blank" rel="nofollow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/jqueryscript" class="w-10 h-10 bg-black rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" target="_blank" rel="nofollow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+                                <path d="M18 6 6 18"/>
+                                <path d="m6 6 12 12"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@jQueryScriptCSS" class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors duration-300" target="_blank" rel="nofollow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                                <path d="m10 15 5-3-5-3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 24to12Converter.com. All rights reserved.</p>
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                    <span class="text-gray-400 text-sm">Made with ❤️ by <a href="https://www.jqueryscript.net" target="_blank">jQueryScript</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js?v08242025"></script>
+    <script>
+    // Language switcher functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const languageSwitcher = document.getElementById('language-switcher');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const mobileLanguageSwitcher = document.getElementById('mobile-language-switcher');
+
+        if (languageSwitcher && languageDropdown) {
+            languageSwitcher.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                languageDropdown.classList.toggle('hidden');
+            });
+        }
+
+        if (mobileLanguageSwitcher) {
+            mobileLanguageSwitcher.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Create mobile dropdown if it doesn't exist
+                let mobileDropdown = document.getElementById('mobile-language-dropdown');
+                if (!mobileDropdown) {
+                    mobileDropdown = document.createElement('div');
+                    mobileDropdown.id = 'mobile-language-dropdown';
+                    mobileDropdown.className = 'hidden bg-white border-t border-gray-200';
+                    mobileDropdown.innerHTML = `
+                        <a href="/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">English</a>
+                        <a href="/de/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Deutsch</a>
+                        <a href="/es/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Español</a>
+                        <a href="/fr/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Français</a>
+                        <a href="/pt/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Português</a>
+                        <a href="/ja/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">日本語</a>
+                        <a href="/ko/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">한국어</a>
+                        <a href="/zh-tw/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">繁體中文</a>
+                    `;
+
+                    // Insert after mobile language switcher
+                    mobileLanguageSwitcher.parentNode.insertBefore(mobileDropdown, mobileLanguageSwitcher.nextSibling);
+                }
+
+                mobileDropdown.classList.toggle('hidden');
+            });
+        }
+
+        // Close mobile dropdown when clicking outside
+        document.addEventListener('click', function() {
+            const mobileDropdown = document.getElementById('mobile-language-dropdown');
+            if (mobileDropdown) {
+                mobileDropdown.classList.add('hidden');
+            }
+        });
+
+        // Prevent mobile dropdown from closing when clicking inside
+        document.addEventListener('click', function(e) {
+            const mobileDropdown = document.getElementById('mobile-language-dropdown');
+            if (mobileDropdown && mobileDropdown.contains(e.target)) {
+                e.stopPropagation();
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            if (languageDropdown) {
+                languageDropdown.classList.add('hidden');
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside
+        if (languageDropdown) {
+            languageDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        // Military time converter functionality
+        const militaryInput = document.getElementById('military-input');
+        const convertMilitaryBtn = document.getElementById('convert-military-btn');
+        const militaryResult = document.getElementById('military-result');
+        const civilianInput = document.getElementById('civilian-input');
+        const convertCivilianBtn = document.getElementById('convert-civilian-btn');
+        const civilianResult = document.getElementById('civilian-result');
+
+        function convertMilitaryToCivilian(militaryTime) {
+            // Remove colon if present
+            militaryTime = militaryTime.replace(':', '');
+
+            // Validate input
+            if (!/^\d{4}$/.test(militaryTime)) {
+                return { error: '유효한 4자리 군사 시간을 입력하세요 (예: 1430)' };
+            }
+
+            const hours = parseInt(militaryTime.substring(0, 2));
+            const minutes = militaryTime.substring(2, 4);
+
+            if (hours > 2359 || parseInt(minutes) > 59) {
+                return { error: '유효하지 않은 시간입니다' };
+            }
+
+            let civilianHours = hours % 12;
+            if (civilianHours === 0) civilianHours = 12;
+            const period = hours < 12 ? 'AM' : 'PM';
+
+            return {
+                result: `${civilianHours}:${minutes} ${period}`,
+                original: `${militaryTime.substring(0, 2)}:${minutes}`
+            };
+        }
+
+        function convertCivilianToMilitary(civilianTime) {
+            // Parse civilian time (format: "2:30 PM" or "14:30")
+            const match = civilianTime.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i);
+            if (!match) {
+                return { error: '유효한 12시간 형식을 입력하세요 (예: 2:30 PM)' };
+            }
+
+            let hours = parseInt(match[1]);
+            const minutes = match[2];
+            const period = match[3]?.toUpperCase();
+
+            if (hours > 12 || parseInt(minutes) > 59) {
+                return { error: '유효하지 않은 시간입니다' };
+            }
+
+            if (period === 'PM' && hours !== 12) {
+                hours += 12;
+            } else if (period === 'AM' && hours === 12) {
+                hours = 0;
+            }
+
+            const militaryHours = hours.toString().padStart(2, '0');
+            return {
+                result: `${militaryHours}${minutes}`,
+                original: `${hours}:${minutes}`
+            };
+        }
+
+        convertMilitaryBtn.addEventListener('click', function() {
+            const input = militaryInput.value.trim();
+            if (!input) return;
+
+            const conversion = convertMilitaryToCivilian(input);
+            if (conversion.error) {
+                militaryResult.textContent = conversion.error;
+                militaryResult.className = 'mt-2 p-3 bg-red-50 rounded-lg text-red-900 font-medium';
+            } else {
+                militaryResult.textContent = `${conversion.original} → ${conversion.result}`;
+                militaryResult.className = 'mt-2 p-3 bg-blue-50 rounded-lg text-blue-900 font-medium';
+            }
+            militaryResult.classList.remove('hidden');
+        });
+
+        convertCivilianBtn.addEventListener('click', function() {
+            const input = civilianInput.value.trim();
+            if (!input) return;
+
+            const conversion = convertCivilianToMilitary(input);
+            if (conversion.error) {
+                civilianResult.textContent = conversion.error;
+                civilianResult.className = 'mt-2 p-3 bg-red-50 rounded-lg text-red-900 font-medium';
+            } else {
+                civilianResult.textContent = `${conversion.original} → ${conversion.result}`;
+                civilianResult.className = 'mt-2 p-3 bg-green-50 rounded-lg text-green-900 font-medium';
+            }
+            civilianResult.classList.remove('hidden');
+        });
+
+        // Allow Enter key to trigger conversion
+        militaryInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertMilitaryBtn.click();
+            }
+        });
+
+        civilianInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertCivilianBtn.click();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
