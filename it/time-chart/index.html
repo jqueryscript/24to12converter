@@ -88,46 +88,41 @@
     gtag('config', 'G-P5JKD0FS93');
     </script>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-    <header class="bg-white/90 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
+<body class="bg-slate-50 text-slate-800">
+    <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-4">
-                    <a href="/it/" class="flex items-center space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <span class="text-xl font-bold text-gray-900">24to12Converter</span>
+            <div class="flex justify-between items-center py-4">
+                <div class="logo">
+                    <a href="https://www.24to12converter.com/" class="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                        24 Ore a 12 Ore <span class="text-blue-600">Convertitore</span>
                     </a>
                 </div>
-
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="/it/" class="text-gray-600 hover:text-blue-600 font-medium">Convertitore 12 Ore</a>
-                    <a href="/it/military-time-converter/" class="text-gray-600 hover:text-blue-600">Convertitore Ora Militare</a>
-                    <a href="/it/time-chart/" class="text-gray-600 hover:text-blue-600 font-medium">Tabella Conversione Orari</a>
+                    <a href="/it/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Convertitore 12 Ore</a>
+                    <a href="/it/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Convertitore Ora Militare</a>
+                    <a href="/it/time-chart/" class="text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors">Tabella Conversione Orari</a>
                     <div class="relative">
-                        <button id="language-switcher" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
                                 <circle cx="12" cy="12" r="10"/>
                                 <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
                                 <path d="M2 12h20"/>
                             </svg>
-                            <span class="text-sm">Lingua: Italiano</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
-                                <polyline points="6 9 12 15 18 9"/>
+                            <span>Italiano</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                <path d="m6 9 6 6 6-6"/>
                             </svg>
                         </button>
                         <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                            <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
-                            <a href="/de/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deutsch</a>
-                            <a href="/es/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Español</a>
-                            <a href="/fr/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Français</a>
-                            <a href="/pt/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Português</a>
-                            <a href="/ja/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
-                            <a href="/ko/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
-                            <a href="/zh-tw/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文</a>
-                            <a href="/it/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium">Italiano</a>
+                            <a href="/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="/de/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deutsch</a>
+                            <a href="/es/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Español</a>
+                            <a href="/fr/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Français</a>
+                            <a href="/pt/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Português</a>
+                            <a href="/ja/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                            <a href="/ko/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
+                            <a href="/it/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium">Italiano</a>
+                            <a href="/zh-tw/time-chart/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文</a>
                         </div>
                     </div>
                 </nav>
@@ -154,7 +149,7 @@
                             <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
                             <path d="M2 12h20"/>
                         </svg>
-                        <span class="ml-1">Lingua: Italiano</span>
+                        <span>Italiano</span>
                     </button>
                 </div>
             </div>
@@ -640,15 +635,15 @@
                         mobileDropdown.id = 'mobile-language-dropdown';
                         mobileDropdown.className = 'hidden bg-white border-t border-gray-200';
                         mobileDropdown.innerHTML = `
-                            <a href="/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">English</a>
-                            <a href="/de/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Deutsch</a>
-                            <a href="/es/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Español</a>
-                            <a href="/fr/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Français</a>
-                            <a href="/pt/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Português</a>
-                            <a href="/ja/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">日本語</a>
-                            <a href="/ko/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">한국어</a>
-                            <a href="/zh-tw/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">繁體中文</a>
-                            <a href="/it/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 font-medium">Italiano</a>
+                            <a href="/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">English</a>
+                            <a href="/de/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Deutsch</a>
+                            <a href="/es/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Español</a>
+                            <a href="/fr/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Français</a>
+                            <a href="/pt/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Português</a>
+                            <a href="/ja/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">日本語</a>
+                            <a href="/ko/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">한국어</a>
+                            <a href="/it/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50 font-medium">Italiano</a>
+                            <a href="/zh-tw/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">繁體中文</a>
                         `;
 
                         // Insert after mobile language switcher
