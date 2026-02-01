@@ -181,15 +181,24 @@ languages.forEach(lang => {
 
     const t = translations[lang.code] || translations.en;
 
-    // 生成 24 个页面
+    // 生成 00:00 到 23:45 的页面
+    const intervals = [0, 15, 30, 45];
+    const allTimePoints = [];
     for (let h = 0; h < 24; h++) {
-        const timeData = convertTime(h, 0);
+        for (let m of intervals) {
+            allTimePoints.push({ h, m });
+        }
+    }
+
+    allTimePoints.forEach((point, index) => {
+        const { h, m } = point;
+        const timeData = convertTime(h, m);
         const { time24, time12, hour24, hour12, period } = timeData;
         const dirName = time24.replace(':', '-'); // "15-00"
         
         const pageDir = path.join(langBaseDir, dirName);
         if (!fs.existsSync(pageDir)) {
-            fs.mkdirSync(pageDir);
+            fs.mkdirSync(pageDir, { recursive: true });
         }
 
         // 准备替换内容
@@ -199,10 +208,12 @@ languages.forEach(lang => {
         const explanation = t.expl(hour24, time24, time12, hour12, period);
         
         // 导航链接
-        const prevH = h === 0 ? 23 : h - 1;
-        const nextH = h === 23 ? 0 : h + 1;
-        const prevT = convertTime(prevH, 0).time24;
-        const nextT = convertTime(nextH, 0).time24;
+        const prevIndex = index === 0 ? allTimePoints.length - 1 : index - 1;
+        const nextIndex = index === allTimePoints.length - 1 ? 0 : index + 1;
+        const prevPoint = allTimePoints[prevIndex];
+        const nextPoint = allTimePoints[nextIndex];
+        const prevT = convertTime(prevPoint.h, prevPoint.m).time24;
+        const nextT = convertTime(nextPoint.h, nextPoint.m).time24;
         
         // 注意 URL 路径:
         // 当前页面是 /{lang}/time/{current}/
@@ -335,13 +346,13 @@ languages.forEach(lang => {
                  content = content.replace(/src="\.\.\/script\.js/g, `src="${prefix}script.js`);
 
                  fs.writeFileSync(path.join(pageDir, 'index.html'), content);
-                 continue; 
+                 return; 
              }
              
              content = beforeMain + newMainContent + middlePart + footerPart;
         } else {
             console.error(`Structure markers not found in ${lang.code} template.`);
-            continue;
+            return;
         }
 
         // 修正资源路径
@@ -353,7 +364,7 @@ languages.forEach(lang => {
         content = content.replace(/src="(\.\/|\.\.\/)script\.js/g, `src="${prefix}script.js`);
 
         fs.writeFileSync(path.join(pageDir, 'index.html'), content);
-    }
+    });
 });
 
 console.log('All multilingual pages generated.');

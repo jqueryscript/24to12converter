@@ -2,62 +2,48 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-// 需要处理的文件匹配模式
-const files = [
-    'index.html',                          // 根目录主页
-    '**/index.html',                       // 各子目录主页 (de, es, time-chart 等)
-    '**/time-chart/index.html'             // 专门的图表页
-];
-
-// 排除已经生成的落地页本身，避免死循环
-const ignore = [
-    'time/**/index.html',
-    '**/time/**/index.html',
-    'node_modules/**'
-];
+const filesPattern = '**/index.html';
+const ignore = ['node_modules/**'];
 
 function processFiles() {
-    // 使用 glob 找到所有 index.html
-    const allFiles = glob.sync('**/index.html', { 
-        ignore: ignore,
-        nodir: true 
-    });
-
-    console.log(`Found ${allFiles.length} pages to update with internal links...`);
+    const allFiles = glob.sync(filesPattern, { ignore, nodir: true });
+    console.log(`Found ${allFiles.length} pages to update...`);
 
     allFiles.forEach(filePath => {
+        const normalizedPath = filePath.replace(/\\/g, '/');
+        const parts = normalizedPath.split('/');
+        
         let content = fs.readFileSync(filePath, 'utf8');
         let modified = false;
+        let linkPrefix = '';
 
-        // 识别当前文件的深度，以确定链接前缀
-        // 根目录 index.html -> time/15-00/
-        // de/index.html -> time/15-00/
-        // de/time-chart/index.html -> ../time/15-00/
-        // time-chart/index.html -> ../time/15-00/
-        
-        const dirDepth = filePath.split(path.sep).length - 1;
-        let linkPrefix = 'time/';
-        
-        // 如果是在子目录的子目录（如 de/time-chart），需要回退一级到语言根目录
-        // 但注意：你的结构中，de/ 下面就有 time/ 目录，所以 de/index.html 应该直接连 time/
-        // 而 de/time-chart/index.html 需要 ../time/
-        if (filePath.includes('time-chart') || filePath.includes('military-time-converter')) {
+        if (normalizedPath === 'index.html') {
+            linkPrefix = 'time/';
+        } else if (parts.includes('time-chart') || parts.includes('military-time-converter')) {
             linkPrefix = '../time/';
+        } else if (parts.includes('time') && parts[parts.length - 1] === 'index.html') {
+            linkPrefix = '../';
+        } else if (parts.length === 2 && parts[1] === 'index.html') {
+            linkPrefix = 'time/';
+        } else {
+            linkPrefix = 'time/';
         }
 
-        // 匹配表格中的整点时间单元格
-        // 原始格式: <td class="px-6 py-4 font-medium text-slate-900">15:00</td>
-        const timeRegex = /<td class="px-6 py-4 font-medium text-slate-900">(\d{2}):00<\/td>/g;
+        const timeRegex = /<td class="px-6 py-4 font-medium text-slate-900">(?:<a[^>]*>)?(\d{2}):(00|15|30|45)(?:<\/a>)?<\/td>/g;
 
-        content = content.replace(timeRegex, (match, hour) => {
-            modified = true;
-            const timeSlug = `${hour}-00`;
-            return `<td class="px-6 py-4 font-medium text-slate-900"><a href="${linkPrefix}${timeSlug}/" class="text-blue-600 hover:underline">${hour}:00</a></td>`;
+        content = content.replace(timeRegex, (match, hour, minute) => {
+            const timeSlug = `${hour}-${minute}`;
+            const newContent = `<td class="px-6 py-4 font-medium text-slate-900"><a href="${linkPrefix}${timeSlug}/" class="text-blue-600 hover:underline">${hour}:${minute}</a></td>`;
+            if (match !== newContent) {
+                modified = true;
+                return newContent;
+            }
+            return match;
         });
 
         if (modified) {
             fs.writeFileSync(filePath, content);
-            console.log(`Updated links in: ${filePath}`);
+            console.log(`Fixed links in: ${normalizedPath} (Prefix: ${linkPrefix})`);
         }
     });
 }

@@ -22,33 +22,37 @@ const languages = [
 let newUrls = '';
 let addedCount = 0;
 
+const intervals = ['00', '15', '30', '45'];
+
 languages.forEach(lang => {
     for (let h = 0; h < 24; h++) {
         const hourStr = h.toString().padStart(2, '0');
-        const dirName = `${hourStr}-00`;
-        
-        let pathStr = '';
-        if (lang.prefix) {
-            pathStr = `${lang.prefix}/time/${dirName}/`;
-        } else {
-            pathStr = `time/${dirName}/`;
-        }
-        
-        const loc = `${baseUrl}/${pathStr}`;
-        
-        // 检查是否存在
-        if (sitemapContent.includes(`<loc>${loc}</loc>`)) {
-            continue;
-        }
+        for (let m of intervals) {
+            const dirName = `${hourStr}-${m}`;
+            
+            let pathStr = '';
+            if (lang.prefix) {
+                pathStr = `${lang.prefix}/time/${dirName}/`;
+            } else {
+                pathStr = `time/${dirName}/`;
+            }
+            
+            const loc = `${baseUrl}/${pathStr}`;
+            
+            // 检查是否存在
+            if (sitemapContent.includes(`<loc>${loc}</loc>`)) {
+                continue;
+            }
 
-        newUrls += `
+            newUrls += `
     <url>
         <loc>${loc}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>`;
-        addedCount++;
+            addedCount++;
+        }
     }
 });
 

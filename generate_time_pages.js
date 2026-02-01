@@ -58,14 +58,24 @@ function getExplanation(timeData) {
     }
 }
 
-// 生成 00:00 到 23:00 的页面
-console.log('Starting page generation...');
+// 生成 00:00 到 23:45 的页面
+console.log('Starting page generation for 15-minute intervals...');
+
+const intervals = [0, 15, 30, 45];
+const allTimePoints = [];
 
 for (let h = 0; h < 24; h++) {
-    const timeData = convertTime(h, 0);
+    for (let m of intervals) {
+        allTimePoints.push({ h, m });
+    }
+}
+
+allTimePoints.forEach((point, index) => {
+    const { h, m } = point;
+    const timeData = convertTime(h, m);
     const { time24, time12 } = timeData;
     
-    // 目录名，例如 "15-00"
+    // 目录名，例如 "15-00" 或 "18-30"
     const dirName = time24.replace(':', '-');
     const pageDir = path.join(outputDir, dirName);
     
@@ -73,11 +83,16 @@ for (let h = 0; h < 24; h++) {
         fs.mkdirSync(pageDir);
     }
 
-    // 上一个和下一个小时用于导航
-    const prevHour = h === 0 ? 23 : h - 1;
-    const nextHour = h === 23 ? 0 : h + 1;
-    const prevTime = convertTime(prevHour, 0);
-    const nextTime = convertTime(nextHour, 0);
+    // 获取上一个和下一个时间点用于导航
+    const prevIndex = index === 0 ? allTimePoints.length - 1 : index - 1;
+    const nextIndex = index === allTimePoints.length - 1 ? 0 : index + 1;
+    
+    const prevPoint = allTimePoints[prevIndex];
+    const nextPoint = allTimePoints[nextIndex];
+    
+    const prevTime = convertTime(prevPoint.h, prevPoint.m);
+    const nextTime = convertTime(nextPoint.h, nextPoint.m);
+    
     const prevLink = `/time/${prevTime.time24.replace(':', '-')}/`;
     const nextLink = `/time/${nextTime.time24.replace(':', '-')}/`;
 
@@ -187,6 +202,6 @@ for (let h = 0; h < 24; h++) {
     const filePath = path.join(pageDir, 'index.html');
     fs.writeFileSync(filePath, pageContent);
     console.log(`Generated: ${dirName}/index.html`);
-}
+});
 
 console.log('All pages generated successfully!');
