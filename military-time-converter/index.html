@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Military Time Converter & Chart (Army Time) | Free Tool</title>
-    <meta name="description" content="Free military time converter with interactive chart. Convert between 24-hour military time and 12-hour AM/PM format instantly.">
-    <meta name="keywords" content="military time converter, 24 hour time, army time, military time chart, time conversion">
+    <title>Military Time Converter and Chart - Free AM/PM Tool</title>
+    <meta name="description" content="Convert military time to standard AM/PM time and back. Enter 1830 or 18:30, copy the result, and use the printable military time chart.">
+    <meta name="keywords" content="military time converter, military time chart, 24 hour time to AM PM, army time converter, time conversion">
     <meta name="google-site-verification" content="_r6g5g5LjQucBxV5zl1aTW0k0A8eApMl-Rr4qplCMM0" />
     <link rel="canonical" href="https://www.24to12converter.com/military-time-converter/">
     <link rel="alternate" hreflang="en" href="https://www.24to12converter.com/military-time-converter/" />
@@ -14,7 +14,7 @@
     <link rel="alternate" hreflang="fr" href="https://www.24to12converter.com/fr/military-time-converter/" />
     <link rel="alternate" hreflang="pt" href="https://www.24to12converter.com/pt/military-time-converter/" />
     <link rel="alternate" hreflang="ja" href="https://www.24to12converter.com/ja/military-time-converter/" />
-    <link rel="alternate" hreflang="zh-tw" href="https://www.24to12converter.com/zh-tw/military-time-converter/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://www.24to12converter.com/zh-tw/military-time-converter/" />
     <link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/military-time-converter/" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -35,15 +35,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.24to12converter.com/military-time-converter/">
-    <meta property="og:title" content="Military Time Converter | 24to12Converter.com">
-    <meta property="og:description" content="Free military time converter with interactive chart. Convert between 24-hour military time and 12-hour AM/PM format instantly.">
+    <meta property="og:title" content="Military Time Converter and Chart - Free AM/PM Tool">
+    <meta property="og:description" content="Convert military time to standard AM/PM time and back. Enter 1830 or 18:30, copy the result, and use the printable military time chart.">
     <meta property="og:image" content="https://www.24to12converter.com/web-app-manifest-512x512.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.24to12converter.com/military-time-converter/">
-    <meta property="twitter:title" content="Military Time Converter | 24to12Converter.com">
-    <meta property="twitter:description" content="Free military time converter with interactive chart. Convert between 24-hour military time and 12-hour AM/PM format instantly.">
+    <meta property="twitter:title" content="Military Time Converter and Chart - Free AM/PM Tool">
+    <meta property="twitter:description" content="Convert military time to standard AM/PM time and back. Enter 1830 or 18:30, copy the result, and use the printable military time chart.">
     <meta property="twitter:image" content="https://www.24to12converter.com/web-app-manifest-512x512.png">
 
     <link rel="stylesheet" href="../dist/app.css?v08242025">
@@ -54,15 +54,15 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "url": "https://www.24to12converter.com/military-time-converter/",
-      "name": "Military Time Converter",
-      "description": "Free military time converter with interactive chart for converting between 24-hour military time and 12-hour AM/PM format."
+      "name": "Military Time Converter and Chart",
+      "description": "Convert military time to standard AM/PM time and back. Enter 1830 or 18:30, copy the result, and use the printable military time chart."
     }
     </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Military Time Converter",
+        "name": "Military Time Converter and Chart",
         "operatingSystem": "Any",
         "applicationCategory": "Utilities",
         "offers": {
@@ -94,18 +94,18 @@
         },
         {
           "@type": "Question",
-          "name": "What does 0000 mean in military time?",
+          "name": "How do you read 0000?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "0000 represents midnight (12:00 AM) in military time. It's the start of a new day and is pronounced 'zero hundred hours' or 'twenty-four hundred hours' when referring to the previous day's end."
+            "text": "0000 is midnight, or 12:00 AM. It is usually read as 'zero hundred hours' and marks the start of a new day."
           }
         },
         {
           "@type": "Question",
-          "name": "What is 1400 in military time?",
+          "name": "What is 1730 military time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "1400 hours in military time equals 2:00 PM in standard time."
+            "text": "1730 military time is 5:30 PM in standard 12-hour time. Subtract 1200 from 1730 to get 530, then add PM."
           }
         },
         {
@@ -248,16 +248,16 @@
             <div class="container mx-auto px-4">
                 <section class="text-center max-w-2xl mx-auto">
                     <h1 class="text-3xl md:text-5xl font-bold tracking-tight">
-                        Military Time Converter
+                        Military Time Converter and Chart
                     </h1>
                     <p class="mt-4 text-lg text-slate-600">
-                        Convert between 24-hour military time and standard 12-hour format instantly
+                        Convert military time to AM/PM time or convert 12-hour time back to 24-hour format. Enter 1830, 18:30, or 6:30 PM and copy the result instantly.
                     </p>
                 </section>
 
                 <section class="max-w-md mx-auto mt-12 py-8" id="converter">
                     <div class="converter bg-white p-6 md:p-8 rounded-xl shadow-lg border border-slate-200">
-                        <input type="text" id="time-input" placeholder="e.g., 1830 or 1830" maxlength="4" class="w-full p-4 text-center text-2xl font-mono bg-slate-100 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <input type="text" id="time-input" placeholder="e.g., 1830 or 6:30 PM" maxlength="10" class="w-full p-4 text-center text-2xl font-mono bg-slate-100 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
                         <button id="convert-btn" class="w-full mt-4 py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors cursor-pointer">Convert</button>
                         <div class="result-container mt-6 text-center min-h-[60px]">
                             <p id="result-text" class="text-3xl font-bold text-blue-600"></p>
@@ -470,17 +470,17 @@
                         <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
                             <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
                                 <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What does 0000 mean in military time?
+                                How do you read 0000?
                             </h3>
-                            <p class="text-gray-600 pl-9">0000 represents midnight (12:00 AM) in military time. It's the start of a new day and is pronounced "zero hundred hours" or "twenty-four hundred hours" when referring to the previous day's end.</p>
+                            <p class="text-gray-600 pl-9">0000 is midnight, or 12:00 AM. It is usually read as "zero hundred hours" and marks the start of a new day.</p>
                         </div>
 
                         <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
                             <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
                                 <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What is 1400 in military time?
+                                What is 1730 military time?
                             </h3>
-                            <p class="text-gray-600 pl-9">1400 hours in military time equals 2:00 PM in standard time.</p>
+                            <p class="text-gray-600 pl-9">1730 military time is 5:30 PM in standard 12-hour time. Subtract 1200 from 1730 to get 530, then add PM.</p>
                         </div>
 
                         <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
@@ -554,11 +554,12 @@
         <div class="py-16 md:py-24">
             <div class="container mx-auto px-4">
                 <section id="military-time-chart" aria-labelledby="chart-heading">
-                    <h2 id="chart-heading" class="text-2xl md:text-3xl font-bold text-center">Military Time Conversion Chart</h2>
+                    <h2 id="chart-heading" class="text-2xl md:text-3xl font-bold text-center">Printable Military Time Chart</h2>
+                    <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto">Use this military time chart to check common 24-hour times and print a quick reference for schedules, reports, or training.</p>
                     <div class="text-center mt-4">
                         <button id="print-btn" class="inline-flex items-center gap-2 py-2 px-4 bg-slate-200 font-medium rounded-lg hover:bg-slate-300 cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z" /></svg>
-                            <span>Print Chart</span>
+                            <span>Print Military Time Chart</span>
                         </button>
                     </div>
                     <div class="max-w-2xl mx-auto mt-8 overflow-hidden rounded-lg shadow-md border border-slate-200">

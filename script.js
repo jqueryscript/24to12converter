@@ -34,8 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const input = timeInput;
         const originalValue = input.value;
 
-        // Only allow digits
-        let digits = originalValue.replace(/[^0-9]/g, '');
+        let value = originalValue.replace(/[^0-9: apmAPM]/g, '');
+        const hasAmPmInput = /[apm]/i.test(value);
+
+        if (hasAmPmInput) {
+            value = value.replace(/\s+/g, ' ').trimStart();
+            if (value.length > 10) {
+                value = value.substring(0, 10);
+            }
+            input.value = value;
+
+            if (/(am|pm)/i.test(value) && /\d/.test(value)) {
+                setTimeout(() => {
+                    handleConversion();
+                }, 100);
+            }
+            return;
+        }
+
+        // Only allow digits for military-time input.
+        let digits = value.replace(/[^0-9]/g, '');
 
         // Limit to 4 digits
         if (digits.length > 4) {
@@ -70,21 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleMilitaryTimeKeyDown(e) {
         const key = e.key;
-        const isDigit = /[0-9]/.test(key);
+        const isAllowedCharacter = /[0-9apmAPM:\s]/.test(key);
         const isAllowedControlKey = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter'].includes(key);
         const isPaste = (e.ctrlKey || e.metaKey) && key === 'v';
 
-        if (!isDigit && !isAllowedControlKey && !isPaste) {
+        if (!isAllowedCharacter && !isAllowedControlKey && !isPaste) {
             e.preventDefault();
         }
 
         // Allow replacement if text is selected
-        const selection = window.getSelection();
-        const selectedText = selection.toString();
-        const hasSelection = selectedText.length > 0;
+        const hasSelection = timeInput.selectionStart !== timeInput.selectionEnd;
 
-        // Prevent input if we already have 4 digits and no text is selected
-        if (timeInput.value.length >= 4 && isDigit && !hasSelection) {
+        // Prevent input if we already have enough characters and no text is selected.
+        if (timeInput.value.length >= 10 && isAllowedCharacter && !hasSelection) {
             e.preventDefault();
         }
     }
@@ -233,8 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let result;
         if (isMilitaryTimeConverter) {
-            // Military Time Converter always converts 24h to 12h
-            result = convert24to12(input);
+            // Military page detects direction from the input.
+            const lowerInput = input.toLowerCase();
+            result = lowerInput.includes('am') || lowerInput.includes('pm')
+                ? convert12to24(input)
+                : convert24to12(input);
         } else {
             // Main converter can swap between modes
             result = is24to12 ? convert24to12(input) : convert12to24(input);
@@ -386,8 +405,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timeInput) {
             timeInput.addEventListener('keydown', handleMilitaryTimeKeyDown);
             timeInput.addEventListener('input', handleMilitaryTimeInput);
-            timeInput.placeholder = 'e.g., 1830';
-            timeInput.maxLength = 4;
+            timeInput.placeholder = 'e.g., 1830 or 6:30 PM';
+            timeInput.maxLength = 10;
         }
     } else if (fromFormat || toFormat || subHeadingFrom || subHeadingTo) {
         // Main converter page: Full UI with swap functionality
