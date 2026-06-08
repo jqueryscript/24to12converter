@@ -15,7 +15,7 @@ const languages = [
     { code: 'it', prefix: 'it', template: 'it/index.html' },
     { code: 'ja', prefix: 'ja', template: 'ja/index.html' },
     { code: 'ko', prefix: 'ko', template: 'ko/index.html' },
-    { code: 'zh-tw', prefix: 'zh-tw', template: 'zh-tw/index.html' }
+    { code: 'zh-TW', prefix: 'zh-tw', template: 'zh-tw/index.html', translationKey: 'zh-tw' }
 ];
 
 
@@ -177,7 +177,7 @@ languages.forEach(lang => {
         fs.mkdirSync(langBaseDir, { recursive: true });
     }
 
-    const t = translations[lang.code] || translations.en;
+    const t = translations[lang.translationKey || lang.code] || translations.en;
 
 
     const intervals = [0, 15, 30, 45];

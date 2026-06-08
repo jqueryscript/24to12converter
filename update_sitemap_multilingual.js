@@ -16,7 +16,7 @@ const languages = [
     { code: 'it', prefix: 'it' },
     { code: 'ja', prefix: 'ja' },
     { code: 'ko', prefix: 'ko' },
-    { code: 'zh-tw', prefix: 'zh-tw' }
+    { code: 'zh-TW', prefix: 'zh-tw' }
 ];
 
 let newUrls = '';
