@@ -29,17 +29,17 @@ languages.forEach(lang => {
         const hourStr = h.toString().padStart(2, '0');
         for (let m of intervals) {
             const dirName = `${hourStr}-${m}`;
-            
+
             let pathStr = '';
             if (lang.prefix) {
                 pathStr = `${lang.prefix}/time/${dirName}/`;
             } else {
                 pathStr = `time/${dirName}/`;
             }
-            
+
             const loc = `${baseUrl}/${pathStr}`;
-            
-            // 检查是否存在
+
+
             if (sitemapContent.includes(`<loc>${loc}</loc>`)) {
                 continue;
             }

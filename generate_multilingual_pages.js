@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-// === 配置区域 ===
-const baseUrl = 'https://www.24to12converter.com';
-const outputDirBase = __dirname; // 项目根目录
 
-// 语言配置
+const baseUrl = 'https://www.24to12converter.com';
+const outputDirBase = __dirname;
+
+
 const languages = [
     { code: 'en', prefix: '', template: 'index.html' },
     { code: 'de', prefix: 'de', template: 'de/index.html' },
@@ -18,7 +18,7 @@ const languages = [
     { code: 'zh-tw', prefix: 'zh-tw', template: 'zh-tw/index.html' }
 ];
 
-// 翻译字典
+
 const translations = {
     en: {
         titleStr: "What is {time24} Military Time? Convert to {time12}",
@@ -139,7 +139,7 @@ const translations = {
     }
 };
 
-// 辅助函数：转换时间
+
 function convertTime(hour, minute) {
     let period = 'AM';
     let displayHour = hour;
@@ -148,21 +148,21 @@ function convertTime(hour, minute) {
         if (hour > 12) displayHour = hour - 12;
     }
     if (hour === 0) displayHour = 12;
-    
+
     const minuteStr = minute.toString().padStart(2, '0');
     const time24 = `${hour.toString().padStart(2, '0')}:${minuteStr}`;
     const time12 = `${displayHour}:${minuteStr} ${period}`;
-    
+
     return { hour24: hour, minute: minuteStr, time24, hour12: displayHour, period, time12 };
 }
 
-// 主逻辑
+
 console.log('Starting multilingual page generation...');
 
 languages.forEach(lang => {
     console.log(`Processing language: ${lang.code}...`);
-    
-    // 读取该语言的模板
+
+
     const templatePath = path.join(outputDirBase, lang.template);
     if (!fs.existsSync(templatePath)) {
         console.error(`Template not found: ${templatePath}`);
@@ -170,18 +170,16 @@ languages.forEach(lang => {
     }
     let template = fs.readFileSync(templatePath, 'utf8');
 
-    // 确定该语言的输出基础目录
-    // en -> /time/
-    // de -> /de/time/
+
     const langBaseDir = lang.prefix ? path.join(outputDirBase, lang.prefix, 'time') : path.join(outputDirBase, 'time');
-    
+
     if (!fs.existsSync(langBaseDir)) {
         fs.mkdirSync(langBaseDir, { recursive: true });
     }
 
     const t = translations[lang.code] || translations.en;
 
-    // 生成 00:00 到 23:45 的页面
+
     const intervals = [0, 15, 30, 45];
     const allTimePoints = [];
     for (let h = 0; h < 24; h++) {
@@ -194,56 +192,51 @@ languages.forEach(lang => {
         const { h, m } = point;
         const timeData = convertTime(h, m);
         const { time24, time12, hour24, hour12, period } = timeData;
-        const dirName = time24.replace(':', '-'); // "15-00"
-        
+        const dirName = time24.replace(':', '-');
+
         const pageDir = path.join(langBaseDir, dirName);
         if (!fs.existsSync(pageDir)) {
             fs.mkdirSync(pageDir, { recursive: true });
         }
 
-        // 准备替换内容
+
         const title = t.titleStr.replace(/{time24}/g, time24).replace(/{time12}/g, time12);
         const desc = t.descStr.replace(/{time24}/g, time24).replace(/{time12}/g, time12);
         const h1 = t.h1Str.replace(/{time24}/g, time24);
         const explanation = t.expl(hour24, time24, time12, hour12, period);
-        
-        // 导航链接
+
+
         const prevIndex = index === 0 ? allTimePoints.length - 1 : index - 1;
         const nextIndex = index === allTimePoints.length - 1 ? 0 : index + 1;
         const prevPoint = allTimePoints[prevIndex];
         const nextPoint = allTimePoints[nextIndex];
         const prevT = convertTime(prevPoint.h, prevPoint.m).time24;
         const nextT = convertTime(nextPoint.h, nextPoint.m).time24;
-        
-        // 注意 URL 路径:
-        // 当前页面是 /{lang}/time/{current}/
-        // 链接到 /{lang}/time/{prev}/
+
+
         const prevLink = `../${prevT.replace(':', '-')}/`;
         const nextLink = `../${nextT.replace(':', '-')}/`;
-        // 回主页链接: /{lang}/ -> ../../
-        const homeLink = '../../'; 
 
-        // === 核心替换逻辑 ===
+        const homeLink = '../../';
+
+
         let content = template;
 
-        // 1. Meta Tags
+
         content = content.replace(/<title>.*<\/title>/, `<title>${title}</title>`);
-        content = content.replace(/content="[^ vital]*24.*convert.*"/i, `content="${desc}"`); // 模糊匹配原 description
-        // 尝试匹配特定的 og:title 等，如果没有找到就可能保留了原样，这取决于模板的一致性
-        // 为了稳健，我们使用更宽泛的正则或者假设模板结构标准
+        content = content.replace(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${desc}">`);
         content = content.replace(/property="og:title" content=".*?"/, `property="og:title" content="${title}"`);
         content = content.replace(/property="og:description" content=".*?"/, `property="og:description" content="${desc}"`);
         content = content.replace(/property="twitter:title" content=".*?"/, `property="twitter:title" content="${title}"`);
         content = content.replace(/property="twitter:description" content=".*?"/, `property="twitter:description" content="${desc}"`);
 
-        // 2. Canonical & Hreflang (最重要!)
-        // 当前页面的规范 URL
+        // Canonical and hreflang metadata.
         const currentUrlPath = lang.prefix ? `${lang.prefix}/time/${dirName}/` : `time/${dirName}/`;
         const canonicalUrl = `${baseUrl}/${currentUrlPath}`;
         content = content.replace(/<link rel="canonical" href=".*?"/, `<link rel="canonical" href="${canonicalUrl}"`);
+        content = content.replace(/property="og:url" content=".*?"/, `property="og:url" content="${canonicalUrl}"`);
+        content = content.replace(/property="twitter:url" content=".*?"/, `property="twitter:url" content="${canonicalUrl}"`);
 
-        // 重写 hreflang
-        // 我们需要构建一个包含所有语言对应页面的 hreflang 块
         let hreflangBlock = '';
         languages.forEach(l => {
             const lPath = l.prefix ? `${l.prefix}/time/${dirName}/` : `time/${dirName}/`;
@@ -251,14 +244,10 @@ languages.forEach(lang => {
             hreflangBlock += `    <link rel="alternate" hreflang="${l.code}" href="${lUrl}" />\n`;
         });
         hreflangBlock += `    <link rel="alternate" hreflang="x-default" href="${baseUrl}/time/${dirName}/" />`;
-        
-        // 替换现有的 hreflang 块 (假设它们是连续的)
-        // 使用正则找到第一个 hreflang 到最后一个 x-default
-        // 这种替换比较冒险，建议使用标记或者替换整个 <head> 的一部分。
-        // 但鉴于我们知道模板结构，我们可以找到 <!--hreflang tags --> 注释
+
         if (content.includes('<!-- hreflang tags -->')) {
             const startMarker = '<!-- hreflang tags -->';
-            const endMarker = '<!-- Schema.org Markup -->'; // 下一个块通常是 Schema
+            const endMarker = '<!-- Schema.org Markup -->';
             const startIndex = content.indexOf(startMarker);
             const endIndex = content.indexOf(endMarker);
             if (startIndex !== -1 && endIndex !== -1) {
@@ -268,8 +257,7 @@ languages.forEach(lang => {
             }
         }
 
-        // 3. 内容注入
-        // 使用之前的逻辑：替换 Main Content，移除 Changelog
+        // Replace the main converter area and omit the changelog on generated pages.
         const newMainContent = `
         <!-- Hero Result Section -->
         <div class="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
@@ -278,7 +266,7 @@ languages.forEach(lang => {
                     <h1 id="time-heading" class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                         ${h1}
                     </h1>
-                    
+
                     <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-blue-100 my-10 relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
                         <p class="text-lg text-slate-500 font-medium mb-4 uppercase tracking-wider">${t.labelStr}</p>
@@ -315,53 +303,45 @@ languages.forEach(lang => {
         const changelogStart = content.indexOf('<!-- Changelog Section -->');
         const mainEnd = content.indexOf('</main>');
 
-        // 尝试构建页面
-        // 优先使用 changelogStart 剔除日志，如果没有则保留 features 后所有内容
         if (mainStart !== -1 && featuresStart !== -1) {
              const beforeMain = content.substring(0, mainStart + 6);
              let middlePart = '';
              let footerPart = '';
 
              if (changelogStart !== -1 && mainEnd !== -1) {
-                 // 有 Changelog，剔除它
                  middlePart = content.substring(featuresStart, changelogStart);
                  footerPart = content.substring(mainEnd);
              } else {
-                 // 没有 Changelog 标记，保留 features 后所有
                  middlePart = content.substring(featuresStart);
-                 // footerPart 包含在 middlePart 里了，或者我们需要在这里截断？
-                 // 不，如果直接取 substring(featuresStart)，它会包含 </main> 及其后的 footer
-                 // 所以这里直接拼接即可
                  content = beforeMain + newMainContent + middlePart;
-                 // 修正资源路径
-                 // 路径深度：
-                 // en: /time/15-00/ -> depth 2 (../../)
-                 // de: /de/time/15-00/ -> depth 3 (../../../)
                  const depth = lang.prefix ? 3 : 2;
                  const prefix = '../'.repeat(depth);
-                 
+
                  content = content.replace(/href="\.\/dist\/app\.css/g, `href="${prefix}dist/app.css`);
-                 content = content.replace(/href="\.\.\/dist\/app\.css/g, `href="${prefix}dist/app.css`); // 防止重复替换
+                 content = content.replace(/href="\.\.\/dist\/app\.css/g, `href="${prefix}dist/app.css`);
                  content = content.replace(/src="script\.js/g, `src="${prefix}script.js`);
                  content = content.replace(/src="\.\.\/script\.js/g, `src="${prefix}script.js`);
+                 content = content.replace(/href="time\/(\d{2}-\d{2})\//g, 'href="../$1/');
 
                  fs.writeFileSync(path.join(pageDir, 'index.html'), content);
-                 return; 
+                 return;
              }
-             
+
              content = beforeMain + newMainContent + middlePart + footerPart;
         } else {
             console.error(`Structure markers not found in ${lang.code} template.`);
             return;
         }
 
-        // 修正资源路径
+
         const depth = lang.prefix ? 3 : 2;
         const prefix = '../'.repeat(depth);
-        
-        // 处理 CSS/JS 路径 (兼容 ./ 和 ../ 开头的情况)
+
+
         content = content.replace(/href="(\.\/|\.\.\/)dist\/app\.css/g, `href="${prefix}dist/app.css`);
         content = content.replace(/src="(\.\/|\.\.\/)script\.js/g, `src="${prefix}script.js`);
+        content = content.replace(/src="script\.js/g, `src="${prefix}script.js`);
+        content = content.replace(/href="time\/(\d{2}-\d{2})\//g, 'href="../$1/');
 
         fs.writeFileSync(path.join(pageDir, 'index.html'), content);
     });
