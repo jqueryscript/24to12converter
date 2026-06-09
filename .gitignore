@@ -14,3 +14,34 @@ plans.md
 gsc.zip
 .gsc_extract/
 AGENTS.md
+
+# Local AI assistant and planning files
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+DEVELOPMENT.md
+bugfix.md
+plans.md
+todo.md
+prompt.md
+seo.md
+
+# Local SEO data and exports
+gsc.zip
+.gsc_extract/
+
+# Local build and maintenance tooling
+package.json
+package-lock.json
+src/
+add_internal_links.js
+audit_site.js
+audit_site_refined.js
+fix_assets.js
+generate_time_pages.js
+generate_multilingual_pages.js
+update_all_charts.js
+update_home_changelogs.js
+update_sitemap.js
+update_sitemap_multilingual.js
+lint-html.sh
