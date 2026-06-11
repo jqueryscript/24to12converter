@@ -203,6 +203,7 @@
                     <a href="/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">12-Hour Converter</a>
                     <a href="/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Military Time Converter</a>
                     <a href="/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Time Conversion Chart</a>
+                    <a href="#time-format-guides" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
                     <div class="relative">
                         <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -244,6 +245,7 @@
                 <a href="/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">12-Hour Converter</a>
                 <a href="/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Military Time Converter</a>
                 <a href="/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Time Conversion Chart</a>
+                <a href="#time-format-guides" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Guides</a>
                 <div class="border-t border-gray-200">
                     <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -312,14 +314,32 @@
                             <a href="time/22-30/" class="inline-flex items-center rounded-lg bg-white px-3 py-2 text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-50 transition-colors">22:30 is 10:30 PM</a>
                         </div>
                     </div>
-                    <div class="max-w-3xl mx-auto mt-8 text-center">
-                        <h2 class="text-lg font-bold text-slate-900 mb-4">Time format guides</h2>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <a href="24-hour-clock-vs-12-hour-clock/" class="inline-flex items-center rounded-lg bg-white px-3 py-2 text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-50 transition-colors">24-hour clock vs 12-hour clock</a>
-                            <a href="am-and-pm-meaning/" class="inline-flex items-center rounded-lg bg-white px-3 py-2 text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-50 transition-colors">AM and PM meaning</a>
-                            <a href="12-am-vs-12-pm/" class="inline-flex items-center rounded-lg bg-white px-3 py-2 text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-50 transition-colors">12 AM vs 12 PM</a>
-                            <a href="military-time-chart-printable/" class="inline-flex items-center rounded-lg bg-white px-3 py-2 text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-50 transition-colors">Printable military time chart</a>
-                            <a href="how-to-read-24-hour-time/" class="inline-flex items-center rounded-lg bg-white px-3 py-2 text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-50 transition-colors">How to read 24-hour time</a>
+                    <div id="time-format-guides" class="max-w-5xl mx-auto mt-12 scroll-mt-24">
+                        <div class="text-center mb-6">
+                            <h2 class="text-2xl font-bold text-slate-900">Time format guides</h2>
+                            <p class="mt-2 text-slate-600">Clear explanations for AM/PM, 24-hour time, midnight, noon, and printable reference charts.</p>
+                        </div>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                            <a href="24-hour-clock-vs-12-hour-clock/" class="group rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-200 hover:shadow-md transition-all">
+                                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">24-hour clock vs 12-hour clock</h3>
+                                <p class="mt-2 text-sm text-slate-600">Compare both time systems and learn when each format is clearer.</p>
+                            </a>
+                            <a href="am-and-pm-meaning/" class="group rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-200 hover:shadow-md transition-all">
+                                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">AM and PM meaning</h3>
+                                <p class="mt-2 text-sm text-slate-600">Understand what AM and PM mean and how they split the day.</p>
+                            </a>
+                            <a href="12-am-vs-12-pm/" class="group rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-200 hover:shadow-md transition-all">
+                                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">12 AM vs 12 PM</h3>
+                                <p class="mt-2 text-sm text-slate-600">Avoid the common midnight and noon mistake with exact examples.</p>
+                            </a>
+                            <a href="military-time-chart-printable/" class="group rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-200 hover:shadow-md transition-all">
+                                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Printable military time chart</h3>
+                                <p class="mt-2 text-sm text-slate-600">Use a quick reference chart for common 24-hour time conversions.</p>
+                            </a>
+                            <a href="how-to-read-24-hour-time/" class="group rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-200 hover:shadow-md transition-all sm:col-span-2 lg:col-span-1">
+                                <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">How to read 24-hour time</h3>
+                                <p class="mt-2 text-sm text-slate-600">Learn the simple rules for reading times such as 00:00, 13:30, and 23:59.</p>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -991,6 +1011,7 @@
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
                     <ul class="space-y-3">
+                        <li><a href="#time-format-guides" class="text-gray-400 hover:text-white transition-colors duration-300">Time Format Guides</a></li>
                         <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
                         <li><a href="#how-to-use" class="text-gray-400 hover:text-white transition-colors duration-300">How It Works</a></li>
                         <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors duration-300">Use Cases</a></li>
