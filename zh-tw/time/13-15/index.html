@@ -177,6 +177,32 @@
   ]
 }
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.24to12converter.com/zh-tw/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Time Chart",
+      "item": "https://www.24to12converter.com/zh-tw/time-chart/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "13:15",
+      "item": "https://www.24to12converter.com/zh-tw/time/13-15/"
+    }
+  ]
+}
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT9K7B1B12"></script>
     <script>
@@ -262,11 +288,20 @@
         <!-- Hero Result Section -->
         <div class="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
             <div class="container mx-auto px-4">
+                    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-slate-500">
+                        <ol class="flex flex-wrap items-center justify-center gap-2">
+                            <li><a href="../../" class="hover:text-blue-600 transition-colors">Home</a></li>
+                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
+                            <li><a href="../../time-chart/" class="hover:text-blue-600 transition-colors">Time Chart</a></li>
+                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
+                            <li aria-current="page" class="font-medium text-slate-700">13:15</li>
+                        </ol>
+                    </nav>
                 <section aria-labelledby="time-heading" class="max-w-3xl mx-auto text-center">
                     <h1 id="time-heading" class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                         24小時制的 <span class='text-blue-600'>13:15</span> 是什麼時間？
                     </h1>
-                    
+
                     <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-blue-100 my-10 relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
                         <p class="text-lg text-slate-500 font-medium mb-4 uppercase tracking-wider">12小時制標準時間</p>
@@ -397,7 +432,7 @@
                     </div>
 
                     <div class="text-center mt-12">
-                        <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
+                        <a href="#converter" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
