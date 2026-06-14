@@ -88,117 +88,27 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "00:00在12小時制中是什麼？",
+      "name": "How do I convert 24-hour time to 12-hour time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "24小時制的00:00在12小時制中是上午12:00。這代表午夜，新一天的開始。"
+        "text": "For hours 13-23, subtract 12 and add PM. For 00:00, use 12:00 AM. For 01:00-11:59, keep the hour and add AM. For 12:00-12:59, keep 12 and add PM."
       }
     },
     {
       "@type": "Question",
-      "name": "12:00在12小時制中是什麼？",
+      "name": "Is midnight 12 AM or 12 PM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "24小時制的12:00在12小時制中是下午12:00。這代表中午，一天的中間。"
+        "text": "Midnight is 12:00 AM (00:00 in 24-hour time). Noon is 12:00 PM (12:00 in 24-hour time)."
       }
     },
     {
       "@type": "Question",
-      "name": "23:59在12小時制中是什麼？",
+      "name": "Why do some countries use 24-hour time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "24小時制的23:59在12小時制中是下午11:59。"
+        "text": "The 24-hour clock avoids AM/PM ambiguity and is widely used in transportation, healthcare, the military, and most countries outside the United States."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "24:00是有效的時間嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "雖然有時用來表示一天結束，但24:00不是標準的24小時制格式。一天正確地在23:59結束，並在00:00開始。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "午夜是上午12點還是下午12點？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem（中午之前），PM = Post Meridiem（中午之後）。AM涵蓋午夜是上午12:00，而中午是下午12:00。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "24小時制和12小時制有什麼區別？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24小時制使用00-23連續計時，而12小時制使用1-12配合上午/下午標示。24小時制消除了國際使用的歧義。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "如何手動將24小時制轉換為12小時制？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "對於00-11時：加上上午（00:00→上午12:00）。對於12:00：是下午12:00。對於13-23時：減去12並加上下午（13:00→下午1:00）。分鐘保持不變。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "00:00在12小時制中稱為什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24小時制的00:00在12小時制中稱為上午12:00。這代表午夜，一天結束和下一天開始的確切時刻。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "為什麼我們使用上午/下午？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "上午/下午用於12小時制時間格式，以區分上午（上午）和下午/晚上（下午）時段。這個系統起源於古代文明，基於太陽位置將一天分為兩個12小時時段，使時間參考更清晰，避免日夜混淆。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "AM和PM代表什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem（中午之前），PM = Post Meridiem（中午之後）。AM涵蓋午夜到中午，PM涵蓋中午到午夜。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "為什麼有些國家使用24小時制？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24小時制避免了上午和晚上時間的混淆，在歐洲、交通運輸和數字系統中廣泛使用。"
-      }
-    }
-  ]
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.24to12converter.com/zh-tw/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Time Chart",
-      "item": "https://www.24to12converter.com/zh-tw/time-chart/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "23:45",
-      "item": "https://www.24to12converter.com/zh-tw/time/23-45/"
     }
   ]
 }
@@ -228,6 +138,7 @@
                     <a href="/zh-tw/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">12小時制轉換器</a>
                     <a href="/zh-tw/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">軍事時間轉換器</a>
                     <a href="/zh-tw/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">時間轉換表</a>
+                    <a href="/zh-tw/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">指南</a>
                     <div class="relative">
                         <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -269,6 +180,7 @@
                 <a href="/zh-tw/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">12小時制轉換器</a>
                 <a href="/zh-tw/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">軍事時間轉換器</a>
                 <a href="/zh-tw/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">時間轉換表</a>
+                <a href="/zh-tw/guides/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">指南</a>
                 <div class="border-t border-gray-200">
                     <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -288,15 +200,6 @@
         <!-- Hero Result Section -->
         <div class="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
             <div class="container mx-auto px-4">
-                    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-slate-500">
-                        <ol class="flex flex-wrap items-center justify-center gap-2">
-                            <li><a href="../../" class="hover:text-blue-600 transition-colors">Home</a></li>
-                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
-                            <li><a href="../../time-chart/" class="hover:text-blue-600 transition-colors">Time Chart</a></li>
-                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
-                            <li aria-current="page" class="font-medium text-slate-700">23:45</li>
-                        </ol>
-                    </nav>
                 <section aria-labelledby="time-heading" class="max-w-3xl mx-auto text-center">
                     <h1 id="time-heading" class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                         24小時制的 <span class='text-blue-600'>23:45</span> 是什麼時間？
@@ -958,6 +861,7 @@
                         <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors duration-300">使用案例</a></li>
                         <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors duration-300">常見問題</a></li>
                         <li><a href="#conversion-chart" class="text-gray-400 hover:text-white transition-colors duration-300">轉換表</a></li>
+                        <li><a href="/zh-tw/guides/" class="text-gray-400 hover:text-white transition-colors duration-300">時間格式指南</a></li>
                     </ul>
                 </div>
 

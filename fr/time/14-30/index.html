@@ -88,117 +88,27 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Que signifie 00:00 au format 12 heures ?",
+      "name": "How do I convert 24-hour time to 12-hour time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "00:00 au format 24 heures correspond à 12:00 AM au format 12 heures. Cela représente minuit, le début d'une nouvelle journée."
+        "text": "For hours 13-23, subtract 12 and add PM. For 00:00, use 12:00 AM. For 01:00-11:59, keep the hour and add AM. For 12:00-12:59, keep 12 and add PM."
       }
     },
     {
       "@type": "Question",
-      "name": "Que signifie 12:00 au format 12 heures ?",
+      "name": "Is midnight 12 AM or 12 PM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "12:00 au format 24 heures correspond à 12:00 PM au format 12 heures. Cela représente midi, le milieu de la journée."
+        "text": "Midnight is 12:00 AM (00:00 in 24-hour time). Noon is 12:00 PM (12:00 in 24-hour time)."
       }
     },
     {
       "@type": "Question",
-      "name": "Que signifie 23:59 au format 12 heures ?",
+      "name": "Why do some countries use 24-hour time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "23:59 au format 24 heures correspond à 11:59 PM au format 12 heures."
+        "text": "The 24-hour clock avoids AM/PM ambiguity and is widely used in transportation, healthcare, the military, and most countries outside the United States."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "24:00 est-elle une heure valide ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bien que parfois utilisée pour signifier la fin de journée, 24:00 n'est pas un format 24 heures standard. La journée se termine correctement à 23:59 et commence à 00:00."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Minuit est-il 12 AM ou 12 PM ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem (avant midi), PM = Post Meridiem (après midi). AM couvre minuit à midi, PM couvre midi à minuit. Minuit est 12:00 AM, tandis que midi est 12:00 PM."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est la différence entre l'heure 24h et 12h ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L'heure 24h utilise 00-23 continuellement, tandis que l'heure 12h utilise 1-12 avec désignations AM/PM. Le format 24h élimine l'ambiguïté pour une utilisation internationale."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment convertir manuellement 24h en 12h ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pour les heures 00-11 : ajoutez AM (00:00→12:00 AM). Pour 12:00 : c'est 12:00 PM. Pour 13-23 : soustrayez 12 et ajoutez PM (13:00→1:00 PM). Les minutes restent les mêmes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment appelle-t-on 00:00 en heure 12h ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "00:00 au format 24 heures s'appelle 12:00 AM en format 12 heures. Cela représente minuit, le moment exact où une journée se termine et la suivante commence."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi utilisons-nous AM/PM ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM/PM est utilisé dans le format horaire 12 heures pour distinguer les heures du matin (AM) et de l'après-midi/soir (PM). Ce système provient des civilisations anciennes qui divisaient la journée en deux périodes de 12 heures basées sur la position du soleil, facilitant la référence horaire sans confusion entre les heures de jour et de nuit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Que signifient AM et PM ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem (avant midi), PM = Post Meridiem (après midi). AM couvre minuit à midi, PM couvre midi à minuit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi certains pays utilisent-ils le format 24 heures ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L'horloge 24 heures évite la confusion entre les heures du matin et du soir et est largement utilisée en Europe, dans les transports et les systèmes numériques."
-      }
-    }
-  ]
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://www.24to12converter.com/fr/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Tableau de conversion",
-      "item": "https://www.24to12converter.com/fr/time-chart/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "14:30",
-      "item": "https://www.24to12converter.com/fr/time/14-30/"
     }
   ]
 }
@@ -228,6 +138,7 @@
                     <a href="/fr/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Convertisseur 12H</a>
                     <a href="/fr/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Convertisseur Heure Militaire</a>
                     <a href="/fr/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tableau de Conversion</a>
+                    <a href="/fr/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guides</a>
                     <div class="relative">
                         <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -269,6 +180,7 @@
                 <a href="/fr/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Convertisseur 12H</a>
                 <a href="/fr/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Convertisseur Heure Militaire</a>
                 <a href="/fr/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Tableau de Conversion</a>
+                <a href="/fr/guides/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Guides</a>
                 <div class="border-t border-gray-200">
                     <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -288,15 +200,6 @@
         <!-- Hero Result Section -->
         <div class="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
             <div class="container mx-auto px-4">
-                    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-slate-500">
-                        <ol class="flex flex-wrap items-center justify-center gap-2">
-                            <li><a href="../../" class="hover:text-blue-600 transition-colors">Accueil</a></li>
-                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
-                            <li><a href="../../time-chart/" class="hover:text-blue-600 transition-colors">Tableau de conversion</a></li>
-                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
-                            <li aria-current="page" class="font-medium text-slate-700">14:30</li>
-                        </ol>
-                    </nav>
                 <section aria-labelledby="time-heading" class="max-w-3xl mx-auto text-center">
                     <h1 id="time-heading" class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                         Quelle heure est-il <span class='text-blue-600'>14:30</span> ?

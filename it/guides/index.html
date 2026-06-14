@@ -53,18 +53,68 @@
 </head>
 <body class="bg-slate-50 text-slate-800">
 <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-wrap justify-between items-center gap-4 py-4">
-            <a href="/it/" class="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors">Convertitore <span class="text-blue-600">24H in 12H</span></a>
-            <nav class="flex flex-wrap items-center gap-x-6 gap-y-2">
-                <a href="/it/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Convertitore</a>
-                <a href="/it/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Orario militare</a>
-                <a href="/it/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tabella</a>
-                <a href="/it/guides/" class="text-sm font-medium text-blue-700 transition-colors">Guide</a>
-            </nav>
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="logo">
+                    <a href="https://www.24to12converter.com/it/" class="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                        Convertitore <span class="text-blue-600">24H in 12H</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/it/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Convertitore 12 Ore</a>
+                    <a href="/it/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Orario militare</a>
+                    <a href="/it/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Tabella di conversione</a>
+                    <a href="/it/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Guide</a>
+                    <div class="relative">
+                        <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            <span>Italiano</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                            <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="/de/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deutsch</a>
+                            <a href="/es/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Español</a>
+                            <a href="/fr/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Français</a>
+                            <a href="/pt/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Português</a>
+                            <a href="/ja/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                            <a href="/ko/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
+                            <a href="/zh-tw/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文</a>
+                            <a href="/it/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium">Italiano</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-gray-600 hover:text-blue-600" aria-label="Apri il menu di navigazione">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+                <a href="/it/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Convertitore 12 Ore</a>
+                <a href="/it/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Orario militare</a>
+                <a href="/it/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Tabella di conversione</a>
+                <a href="/it/guides/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">Guide</a>
+                <div class="border-t border-gray-200">
+                    <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <span class="ml-1">Lingua: Italiano</span>
+                    </button>
+                    <div id="mobile-language-dropdown" class="hidden bg-white border-t border-gray-200">
+                    <a href="/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">English</a>
+                    <a href="/de/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Deutsch</a>
+                    <a href="/es/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Español</a>
+                    <a href="/fr/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Français</a>
+                    <a href="/pt/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Português</a>
+                    <a href="/ja/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">日本語</a>
+                    <a href="/ko/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">한국어</a>
+                    <a href="/zh-tw/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">繁體中文</a>
+                    <a href="/it/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Italiano</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 <main>
     <section class="py-12 md:py-16">
         <div class="container mx-auto px-4 max-w-5xl">
@@ -112,5 +162,14 @@
         <p class="mt-6 text-gray-400 text-sm">&copy; 2026 24to12Converter.com. All rights reserved.</p>
     </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var mmb=document.getElementById('mobile-menu-button'),mm=document.getElementById('mobile-menu'),ls=document.getElementById('language-switcher'),ld=document.getElementById('language-dropdown'),mls=document.getElementById('mobile-language-switcher'),mld=document.getElementById('mobile-language-dropdown');
+    if(mmb&&mm){mmb.addEventListener('click',function(e){e.stopPropagation();mm.classList.toggle('hidden');});}
+    if(ls&&ld){ls.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();ld.classList.toggle('hidden');});}
+    if(mls&&mld){mls.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();mld.classList.toggle('hidden');});}
+    document.addEventListener('click',function(){if(ld)ld.classList.add('hidden');if(mld)mld.classList.add('hidden');});
+});
+</script>
 </body>
 </html>

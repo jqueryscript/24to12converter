@@ -88,117 +88,27 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "00:00は12時間形式で何ですか？",
+      "name": "How do I convert 24-hour time to 12-hour time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "24時間形式の00:00は12時間形式の12:00 AMです。これは真夜中、新しい一日の始まりを表します。"
+        "text": "For hours 13-23, subtract 12 and add PM. For 00:00, use 12:00 AM. For 01:00-11:59, keep the hour and add AM. For 12:00-12:59, keep 12 and add PM."
       }
     },
     {
       "@type": "Question",
-      "name": "12:00は12時間形式で何ですか？",
+      "name": "Is midnight 12 AM or 12 PM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "24時間形式の12:00は12時間形式の12:00 PMです。これは正午、一日の真ん中を表します。"
+        "text": "Midnight is 12:00 AM (00:00 in 24-hour time). Noon is 12:00 PM (12:00 in 24-hour time)."
       }
     },
     {
       "@type": "Question",
-      "name": "23:59は12時間形式で何ですか？",
+      "name": "Why do some countries use 24-hour time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "24時間形式の23:59は12時間形式の11:59 PMです。"
+        "text": "The 24-hour clock avoids AM/PM ambiguity and is widely used in transportation, healthcare, the military, and most countries outside the United States."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "24:00は有効な時間ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "一日の終わりを示すために時々使用されますが、24:00は標準的な24時間形式ではありません。一日は適切に23:59で終わり、00:00で始まります。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "真夜中は午前12時ですか、それとも午後12時ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem（正午前）、PM = Post Meridiem（正午後）。真夜中は午前12時、正午は午後12時です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "24時間制と12時間制の違いは何ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24時間制は00-23を連続して使用し、12時間制は1-12をAM/PM指定で使用します。24時間制は国際的な使用の曖昧さを排除します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "24時間制を手動で12時間制に変換するには？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "00-11の場合：AMを追加（00:00→12:00 AM）。12:00の場合：12:00 PM。13-23の場合：12を引いてPMを追加（13:00→1:00 PM）。分はそのままです。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "00:00は12時間制で何と呼ばれますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24時間形式の00:00は12時間制では12:00 AMと呼ばれます。これは一日が終わり、次の日が始まる正確な瞬間である真夜中を表します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "なぜAM/PMを使用するのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM/PMは12時間制で午前（AM）と午後/夕方（PM）の時間を区別するために使用されます。このシステムは古代文明から由来し、太陽の位置に基づいて一日を2つの12時間期間に分割し、昼と夜の時間の混乱なく時間を参照しやすくしました。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "AMとPMは何の略ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem（正午前）、PM = Post Meridiem（正午後）。AMは真夜中から正午まで、PMは正午から真夜中までをカバーします。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "なぜ一部の国は24時間制を使用するのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24時間制は朝と夕方の時間の混乱を避け、ヨーロッパ、交通機関、デジタルシステムで広く使用されています。"
-      }
-    }
-  ]
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.24to12converter.com/ja/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Time Chart",
-      "item": "https://www.24to12converter.com/ja/time-chart/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "00:00",
-      "item": "https://www.24to12converter.com/ja/time/00-00/"
     }
   ]
 }
@@ -228,6 +138,7 @@
                     <a href="/ja/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">12時間変換ツール</a>
                     <a href="/ja/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">ミリタリータイム変換</a>
                     <a href="/ja/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">時間変換チャート</a>
+                    <a href="/ja/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">ガイド</a>
                     <div class="relative">
                         <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -269,6 +180,7 @@
                 <a href="/ja/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">12時間変換ツール</a>
                 <a href="/ja/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">ミリタリータイム変換</a>
                 <a href="/ja/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">時間変換チャート</a>
+                <a href="/ja/guides/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">ガイド</a>
                 <div class="border-t border-gray-200">
                     <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
@@ -288,15 +200,6 @@
         <!-- Hero Result Section -->
         <div class="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
             <div class="container mx-auto px-4">
-                    <nav aria-label="Breadcrumb" class="mb-8 text-sm text-slate-500">
-                        <ol class="flex flex-wrap items-center justify-center gap-2">
-                            <li><a href="../../" class="hover:text-blue-600 transition-colors">Home</a></li>
-                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
-                            <li><a href="../../time-chart/" class="hover:text-blue-600 transition-colors">Time Chart</a></li>
-                            <li aria-hidden="true" class="text-slate-300">&rsaquo;</li>
-                            <li aria-current="page" class="font-medium text-slate-700">00:00</li>
-                        </ol>
-                    </nav>
                 <section aria-labelledby="time-heading" class="max-w-3xl mx-auto text-center">
                     <h1 id="time-heading" class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                         24時間表記の<span class='text-blue-600'>00:00</span>は何時？
@@ -958,6 +861,7 @@
                         <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors duration-300">使用例</a></li>
                         <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors duration-300">FAQ</a></li>
                         <li><a href="#conversion-chart" class="text-gray-400 hover:text-white transition-colors duration-300">変換チャート</a></li>
+                        <li><a href="/ja/guides/" class="text-gray-400 hover:text-white transition-colors duration-300">時間形式ガイド</a></li>
                     </ul>
                 </div>
 

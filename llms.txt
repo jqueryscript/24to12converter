@@ -1,0 +1,122 @@
+# 24to12Converter.com
+
+> A free, modern 24-hour to 12-hour time converter with bidirectional conversion, programmatic time pages in 9 languages, and a growing library of time-format guides.
+
+## Project Overview
+
+- **URL:** https://www.24to12converter.com/
+- **Stack:** HTML5, Tailwind CSS 4, vanilla JavaScript (ES6+), Lucide Icons
+- **Deployment:** GitHub Pages (static HTML, no server)
+- **Languages:** English (root), German (/de/), Spanish (/es/), French (/fr/), Portuguese (/pt/), Italian (/it/), Japanese (/ja/), Korean (/ko/), Traditional Chinese (/zh-tw/)
+- **Git:** main branch, commit history documents iterative SEO and content improvements
+
+## Core Tools
+
+| Page | URL | Description |
+|------|-----|-------------|
+| 24h to 12h Converter (EN) | `/` | Main bidirectional time converter, English |
+| Military Time Converter (EN) | `/military-time-converter/` | Specialized military time tool with printable chart |
+| Time Conversion Chart (EN) | `/time-chart/` | Full 24h-to-12h reference table (00:00–23:50) |
+
+Each language version has its own homepage, military-time-converter, time-chart, and guides.
+
+## English Guides
+
+These are hand-written HTML articles targeting long-tail informational queries. Each has unique meta, JSON‑LD Article + BreadcrumbList schema, direct-answer box, tables, and cross-links to tools and other guides.
+
+1. `/guides/24-hour-clock-vs-12-hour-clock/` — 24‑Hour Clock vs 12‑Hour Clock: comparison, conversion method, examples
+2. `/guides/am-and-pm-meaning/` — AM and PM Meaning: what the abbreviations stand for, when each period starts
+3. `/guides/12-am-vs-12-pm/` — 12 AM vs 12 PM: midnight vs noon, the common confusion, 24‑hour equivalents
+4. `/guides/how-to-read-24-hour-time/` — How to Read 24‑Hour Time: step‑by‑step rules, speaking aloud
+5. `/guides/military-time-chart-printable/` — Printable Military Time Chart: full‑day reference, print button
+6. `/guides/how-to-pronounce-military-time/` — How to Pronounce Military Time: zero‑hundred, oh‑six‑hundred, 0000 vs 2400
+7. `/guides/why-the-us-uses-12-hour-clock/` — Why the US Uses the 12‑Hour Clock: history, British influence, country comparison table
+8. `/guides/24-hour-time-around-the-world/` — 24‑Hour Time Around the World: region‑by‑region usage, travel tips
+9. `/guides/what-does-0000-mean/` — What Does 00:00 Mean?: midnight explained, 00:00 vs 2400, common contexts
+
+## Translated Guides
+
+Non-English guides are translations of the most universally relevant English articles. Currently 2 per language:
+
+| Language | Hub | Articles |
+|----------|-----|----------|
+| German | `/de/guides/` | 24‑h vs 12‑h, AM/PM Meaning |
+| Spanish | `/es/guides/` | AM/PM Meaning, 12 AM vs 12 PM |
+| French | `/fr/guides/` | AM/PM Meaning, 12 AM vs 12 PM |
+| Portuguese | `/pt/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
+| Italian | `/it/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
+| Japanese | `/ja/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
+| Korean | `/ko/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
+| Trad. Chinese | `/zh-tw/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
+
+## Programmatic Time Pages
+
+864 static HTML pages generated at 15‑minute intervals (00:00, 00:15, 00:30, 00:45 … 23:45) in all 9 languages.
+
+- Pattern: `/{lang?}/time/HH-MM/`
+- Each page has: unique title, unique meta description, direct‑answer block, nearby‑time navigation, popular‑time links, breadcrumbs, BreadcrumbList JSON‑LD, and (since 2026‑06‑15) a reduced 3‑QA FAQPage schema.
+- Generator: `generate_multilingual_pages.js` (not in public repo — reads a language homepage as template and replaces content blocks)
+
+## SEO / Structured Data
+
+- Every page has Open Graph, Twitter Card, and canonical URL metadata.
+- Tool pages: `WebSite` + `SoftwareApplication` JSON‑LD.
+- Guide articles: `Article` JSON‑LD with datePublished/dateModified.
+- Time pages: `FAQPage` JSON‑LD (3 QAs), `BreadcrumbList` JSON‑LD.
+- Guide hubs: `CollectionPage` JSON‑LD.
+- `sitemap.xml` includes all tool pages, guide hubs, and guide articles.
+- Hreflang tags on all localized pages for language alternates.
+
+## Key Files for Contributors
+
+| File | Purpose |
+|------|---------|
+| `index.html` | English homepage (also the template for English time pages) |
+| `script.js` | Client‑side conversion logic |
+| `src/input.css` | Tailwind CSS source |
+| `dist/output.css` | Compiled Tailwind CSS |
+| `generate_multilingual_pages.js` | Generates all 864 programmatic time pages |
+| `generate_time_pages.js` | Older English‑only time‑page generator |
+| `audit_site_refined.js` | Static‑analysis auditor (dead links, canonical, hreflang) |
+| `update_sitemap.js` / `update_sitemap_multilingual.js` | Sitemap generators for time pages |
+| `sitemap.xml` | Full sitemap (tools + guides + time pages) |
+| `plans.md` | SEO optimization plan and progress tracker |
+| `todo.md` | Development roadmap (AdSense prep, new tools, etc.) |
+| `CLAUDE.md` | Project documentation for Claude Code |
+| `llms.txt` | This file — site overview for LLMs |
+
+## Writing Conventions
+
+- Answer the search query in the first two sentences.
+- Short paragraphs (3–4 sentences max), short sentences.
+- No filler openings, no marketing language.
+- Concrete examples for every rule; at least one table per guide.
+- Internal links use natural anchor text, not raw URLs.
+- All articles are dated; guides show "Updated Month DD, YYYY".
+
+## Current Priorities (June 2026)
+
+1. Improve US CTR through meta description rewrites and FAQPage reduction (implemented 2026‑06‑15).
+2. Publish one long‑tail guide article per day to capture informational queries.
+3. Monitor GSC for CTR changes over the next 28 days.
+4. Add Spanish and Portuguese guide expansions when time‑page CTR gains are indexed.
+
+## Build Commands
+
+```bash
+# Build CSS
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+# Production build
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
+
+# Generate all time pages
+node generate_multilingual_pages.js
+
+# Audit site
+node audit_site_refined.js
+```
+
+---
+
+*Last updated: 2026-06-15*
