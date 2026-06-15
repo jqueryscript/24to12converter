@@ -5715,6 +5715,30 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://www.24to12converter.com/fr/guides/what-does-0000-mean/</loc>
+        <lastmod>2026-06-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.24to12converter.com/fr/guides/0000-vs-2400-time/</loc>
+        <lastmod>2026-06-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.24to12converter.com/it/guides/what-does-0000-mean/</loc>
+        <lastmod>2026-06-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.24to12converter.com/it/guides/0000-vs-2400-time/</loc>
+        <lastmod>2026-06-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://www.24to12converter.com/fr/guides/am-and-pm-meaning/</loc>
         <lastmod>2026-06-13</lastmod>
         <changefreq>monthly</changefreq>
@@ -5740,6 +5764,12 @@
     </url>
     <url>
         <loc>https://www.24to12converter.com/guides/what-does-0000-mean/</loc>
+        <lastmod>2026-06-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.24to12converter.com/guides/how-to-write-midnight-24-hour-time/</loc>
         <lastmod>2026-06-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
