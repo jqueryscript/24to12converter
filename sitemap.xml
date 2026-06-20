@@ -5685,107 +5685,22 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/guides/am-and-pm-meaning/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/guides/military-time-chart-printable/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/guides/how-to-read-24-hour-time/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/fr/guides/what-does-0000-mean/</loc>
-        <lastmod>2026-06-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/fr/guides/0000-vs-2400-time/</loc>
-        <lastmod>2026-06-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/it/guides/what-does-0000-mean/</loc>
-        <lastmod>2026-06-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/it/guides/0000-vs-2400-time/</loc>
-        <lastmod>2026-06-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/fr/guides/how-to-write-midnight-24-hour-time/</loc>
-        <lastmod>2026-06-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/fr/guides/am-pm-capitalization-rules/</loc>
-        <lastmod>2026-06-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/it/guides/how-to-write-midnight-24-hour-time/</loc>
-        <lastmod>2026-06-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/it/guides/am-pm-capitalization-rules/</loc>
-        <lastmod>2026-06-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/fr/guides/am-and-pm-meaning/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/fr/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/it/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/it/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/guides/midnight-24-hour-time/</loc>
         <lastmod>2026-06-17</lastmod>
@@ -5800,6 +5715,24 @@
     </url>
     <url>
         <loc>https://www.24to12converter.com/guides/time-conversion-chart-for-travel/</loc>
+    <url>
+        <loc>https://www.24to12converter.com/guides/am-pm-complete-guide/</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+    <url>
+
+    <url>
+        <loc>https://www.24to12converter.com/guides/how-to-read-convert-24-hour-time/</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+
         <lastmod>2026-06-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -5817,11 +5750,6 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/guides/am-pm-capitalization-rules/</loc>
-        <lastmod>2026-06-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/guides/how-to-pronounce-military-time/</loc>
         <lastmod>2026-06-20</lastmod>
@@ -5847,17 +5775,7 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/de/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/de/guides/am-and-pm-meaning/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/ja/guides/</loc>
         <lastmod>2026-06-14</lastmod>
@@ -5865,17 +5783,7 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/ja/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/ja/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/ko/guides/</loc>
         <lastmod>2026-06-14</lastmod>
@@ -5883,17 +5791,7 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/ko/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/ko/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/zh-tw/guides/</loc>
         <lastmod>2026-06-14</lastmod>
@@ -5901,17 +5799,7 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/zh-tw/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/zh-tw/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/es/guides/</loc>
         <lastmod>2026-06-13</lastmod>
@@ -5919,17 +5807,7 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/es/guides/am-and-pm-meaning/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/es/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
         <loc>https://www.24to12converter.com/pt/guides/</loc>
         <lastmod>2026-06-13</lastmod>
@@ -5937,15 +5815,5 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.24to12converter.com/pt/guides/24-hour-clock-vs-12-hour-clock/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     <url>
-        <loc>https://www.24to12converter.com/pt/guides/12-am-vs-12-pm/</loc>
-        <lastmod>2026-06-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
 </urlset>
