@@ -1,6 +1,6 @@
 # 24to12Converter.com
 
-> A free, modern 24-hour to 12-hour time converter with bidirectional conversion, programmatic time pages in 9 languages, and a growing library of time-format guides.
+> Free 24-hour to 12-hour time converter with bidirectional conversion, time calculation tools, 950+ pages in 9 languages, and a growing library of time-format guides.
 
 ## Project Overview
 
@@ -8,115 +8,86 @@
 - **Stack:** HTML5, Tailwind CSS 4, vanilla JavaScript (ES6+), Lucide Icons
 - **Deployment:** GitHub Pages (static HTML, no server)
 - **Languages:** English (root), German (/de/), Spanish (/es/), French (/fr/), Portuguese (/pt/), Italian (/it/), Japanese (/ja/), Korean (/ko/), Traditional Chinese (/zh-tw/)
-- **Git:** main branch, commit history documents iterative SEO and content improvements
+- **Total pages:** 952 URLs in sitemap
 
 ## Core Tools
 
 | Page | URL | Description |
 |------|-----|-------------|
-| 24h to 12h Converter (EN) | `/` | Main bidirectional time converter, English |
-| Military Time Converter (EN) | `/military-time-converter/` | Specialized military time tool with printable chart |
-| Time Conversion Chart (EN) | `/time-chart/` | Full 24h-to-12h reference table (00:00–23:50) |
+| 24h to 12h Converter | `/` | Main bidirectional time converter, 9 languages |
+| Military Time Converter | `/military-time-converter/` | Specialized military time tool, 9 languages |
+| Time Conversion Chart | `/time-chart/` | Full 24h-to-12h reference table (00:00–23:45), 9 languages |
+| Time Duration Calculator | `/time-duration-calculator/` | Calculate hours/minutes between two times, 9 languages |
+| Add Time Calculator | `/add-time-calculator/` | Add/subtract hours and minutes from any time, 9 languages |
 
-Each language version has its own homepage, military-time-converter, time-chart, and guides.
+## English Guides (10 articles)
 
-## English Guides
-
-These are hand-written HTML articles targeting long-tail informational queries. Each has unique meta, JSON‑LD Article + BreadcrumbList schema, direct-answer box, tables, and cross-links to tools and other guides.
-
-1. `/guides/24-hour-clock-vs-12-hour-clock/` — 24‑Hour Clock vs 12‑Hour Clock: comparison, conversion method, examples
-2. `/guides/am-and-pm-meaning/` — AM and PM Meaning: what the abbreviations stand for, when each period starts
-3. `/guides/12-am-vs-12-pm/` — 12 AM vs 12 PM: midnight vs noon, the common confusion, 24‑hour equivalents
-4. `/guides/how-to-read-24-hour-time/` — How to Read 24‑Hour Time: step‑by‑step rules, speaking aloud
-5. `/guides/military-time-chart-printable/` — Printable Military Time Chart: full‑day reference, print button
-6. `/guides/how-to-pronounce-military-time/` — How to Pronounce Military Time: zero‑hundred, oh‑six‑hundred, 0000 vs 2400
-7. `/guides/why-the-us-uses-12-hour-clock/` — Why the US Uses the 12‑Hour Clock: history, British influence, country comparison table
-8. `/guides/24-hour-time-around-the-world/` — 24‑Hour Time Around the World: region‑by‑region usage, travel tips
-9. `/guides/what-does-0000-mean/` — What Does 00:00 Mean?: midnight explained, 00:00 vs 2400, common contexts
+1. `/guides/am-pm-complete-guide/` — AM/PM Complete Guide: meaning, Latin origins, 12 AM vs 12 PM rule
+2. `/guides/how-to-read-convert-24-hour-time/` — How to Read & Convert 24-Hour Time: step-by-step, full table
+3. `/guides/midnight-24-hour-time/` — Midnight in 24-Hour Time: 00:00 vs 0000 vs 2400, industry conventions
+4. `/guides/time-conversion-chart-for-nurses/` — Nurses Time Conversion Chart: med pass times, shift handoffs
+5. `/guides/time-conversion-chart-for-travel/` — Travel Time Conversion Chart: flights, trains, hotels, restaurants
+6. `/guides/24-hour-clock-examples-for-students/` — 24-Hour Clock Examples for Students
+7. `/guides/24-hour-clock-worksheet-printable/` — Printable 24-Hour Clock Worksheet
+8. `/guides/24-hour-time-around-the-world/` — Which Countries Use Each Format
+9. `/guides/how-to-pronounce-military-time/` — How to Pronounce Military Time
+10. `/guides/why-the-us-uses-12-hour-clock/` — US 12-Hour Clock History
 
 ## Translated Guides
 
-Non-English guides are translations of the most universally relevant English articles. Currently 2 per language:
+Guides 1-5 above are translated to all 8 languages. Guides 6-10 are English only (low international demand per keyword research).
 
-| Language | Hub | Articles |
-|----------|-----|----------|
-| German | `/de/guides/` | 24‑h vs 12‑h, AM/PM Meaning |
-| Spanish | `/es/guides/` | AM/PM Meaning, 12 AM vs 12 PM |
-| French | `/fr/guides/` | AM/PM Meaning, 12 AM vs 12 PM |
-| Portuguese | `/pt/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
-| Italian | `/it/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
-| Japanese | `/ja/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
-| Korean | `/ko/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
-| Trad. Chinese | `/zh-tw/guides/` | 24‑h vs 12‑h, 12 AM vs 12 PM |
+| Language | Hub | Translated Guides |
+|----------|-----|-------------------|
+| German | `/de/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| Spanish | `/es/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| French | `/fr/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| Portuguese | `/pt/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| Italian | `/it/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| Japanese | `/ja/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| Korean | `/ko/guides/` | am-pm, how-to-read, midnight, nurses, travel |
+| Trad. Chinese | `/zh-tw/guides/` | am-pm, how-to-read, midnight, nurses, travel |
 
 ## Programmatic Time Pages
 
-864 static HTML pages generated at 15‑minute intervals (00:00, 00:15, 00:30, 00:45 … 23:45) in all 9 languages.
-
+864 static HTML pages at 15-minute intervals (00:00, 00:15, 00:30, 00:45 … 23:45) in all 9 languages.
 - Pattern: `/{lang?}/time/HH-MM/`
-- Each page has: unique title, unique meta description, direct‑answer block, nearby‑time navigation, popular‑time links, breadcrumbs, BreadcrumbList JSON‑LD, and (since 2026‑06‑15) a reduced 3‑QA FAQPage schema.
-- Generator: `generate_multilingual_pages.js` (not in public repo — reads a language homepage as template and replaces content blocks)
+- Each page: unique title + meta description, direct-answer box, nearby-time nav, same-hour block, 3 related guides, FAQPage + BreadcrumbList JSON-LD
 
 ## SEO / Structured Data
 
-- Every page has Open Graph, Twitter Card, and canonical URL metadata.
-- Tool pages: `WebSite` + `SoftwareApplication` JSON‑LD.
-- Guide articles: `Article` JSON‑LD with datePublished/dateModified.
-- Time pages: `FAQPage` JSON‑LD (3 QAs), `BreadcrumbList` JSON‑LD.
-- Guide hubs: `CollectionPage` JSON‑LD.
-- `sitemap.xml` includes all tool pages, guide hubs, and guide articles.
-- Hreflang tags on all localized pages for language alternates.
+- Every page: Open Graph, Twitter Card, canonical URL, hreflang (where applicable)
+- Tool pages: WebApplication + BreadcrumbList JSON-LD
+- Guide articles: Article + FAQPage + BreadcrumbList JSON-LD
+- Time pages: FAQPage (3-4 QAs) + BreadcrumbList JSON-LD
+- Guide hubs: CollectionPage + BreadcrumbList JSON-LD
+- Homepages: WebSite + SoftwareApplication + FAQPage JSON-LD
+- `sitemap.xml`: 952 URLs
+- Security headers: HSTS, X-Frame-Options, X-Content-Type-Options, CSP
 
-## Key Files for Contributors
+## Key Files
 
 | File | Purpose |
 |------|---------|
-| `index.html` | English homepage (also the template for English time pages) |
-| `script.js` | Client‑side conversion logic |
-| `src/input.css` | Tailwind CSS source |
-| `dist/output.css` | Compiled Tailwind CSS |
-| `generate_multilingual_pages.js` | Generates all 864 programmatic time pages |
-| `generate_time_pages.js` | Older English‑only time‑page generator |
-| `audit_site_refined.js` | Static‑analysis auditor (dead links, canonical, hreflang) |
-| `update_sitemap.js` / `update_sitemap_multilingual.js` | Sitemap generators for time pages |
-| `sitemap.xml` | Full sitemap (tools + guides + time pages) |
-| `plans.md` | SEO optimization plan and progress tracker |
-| `todo.md` | Development roadmap (AdSense prep, new tools, etc.) |
+| `index.html` | English homepage with interactive converter |
+| `script.js` | Client-side conversion logic |
+| `dist/app.css` | Compiled Tailwind CSS |
+| `sitemap.xml` | Full sitemap (952 URLs) |
+| `_headers` | Security headers (HSTS, XFO, etc.) |
 | `CLAUDE.md` | Project documentation for Claude Code |
 | `llms.txt` | This file — site overview for LLMs |
+| `PROMOTION-STRATEGY.md` | Content promotion & link building strategy |
+| `GROWTH-OPPORTUNITIES.md` | On-site growth opportunities analysis |
 
-## Writing Conventions
+## Current State (June 2026)
 
-- Answer the search query in the first two sentences.
-- Short paragraphs (3–4 sentences max), short sentences.
-- No filler openings, no marketing language.
-- Concrete examples for every rule; at least one table per guide.
-- Internal links use natural anchor text, not raw URLs.
-- All articles are dated; guides show "Updated Month DD, YYYY".
-
-## Current Priorities (June 2026)
-
-1. Improve US CTR through meta description rewrites and FAQPage reduction (implemented 2026‑06‑15).
-2. Publish one long‑tail guide article per day to capture informational queries.
-3. Monitor GSC for CTR changes over the next 28 days.
-4. Add Spanish and Portuguese guide expansions when time‑page CTR gains are indexed.
-
-## Build Commands
-
-```bash
-# Build CSS
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
-
-# Production build
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
-
-# Generate all time pages
-node generate_multilingual_pages.js
-
-# Audit site
-node audit_site_refined.js
-```
+- All 864 time pages localized with translated meta, FAQ, and breadcrumb schema
+- Internal linking network: same-hour nav, 3 related guides per time page, guide cross-references
+- Navigation links, footer, and language switchers corrected across all non-EN pages
+- 2 new time calculation tools added (duration + add time)
+- 16 new translated tool pages in progress
+- Schema errors from GSC resolved (orphan breadcrumb fragments cleaned)
 
 ---
 
-*Last updated: 2026-06-15*
+*Last updated: 2026-06-26*

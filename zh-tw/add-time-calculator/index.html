@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間加法計算機 — 在任何時間上添加小時與分鐘</title>
+    <meta name="description" content="免費時間加法計算機。在任何時間上添加或減去小時和分鐘。計算經過一段時間後是什麼時間。支援24小時格式。適用於排程、烹飪和用藥時間。">
+    <link rel="canonical" href="https://www.24to12converter.com/zh-tw/add-time-calculator/">
+    <link rel="alternate" hreflang="en" href="https://www.24to12converter.com/add-time-calculator/" />
+    <link rel="alternate" hreflang="de" href="https://www.24to12converter.com/de/" />
+    <link rel="alternate" hreflang="es" href="https://www.24to12converter.com/es/" />
+    <link rel="alternate" hreflang="fr" href="https://www.24to12converter.com/fr/" />
+    <link rel="alternate" hreflang="pt" href="https://www.24to12converter.com/pt/" />
+    <link rel="alternate" hreflang="it" href="https://www.24to12converter.com/it/" />
+    <link rel="alternate" hreflang="ja" href="https://www.24to12converter.com/ja/" />
+    <link rel="alternate" hreflang="ko" href="https://www.24to12converter.com/ko/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://www.24to12converter.com/zh-tw/add-time-calculator/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.24to12converter.com/add-time-calculator/" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preload" href="../../dist/app.css?v08242025" as="style">
+    <link rel="stylesheet" href="../../dist/app.css?v08242025">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.24to12converter.com/zh-tw/add-time-calculator/">
+    <meta property="og:title" content="時間加法計算機 — 在任何時間上添加小時與分鐘">
+    <meta property="og:description" content="在任何時間上添加或減去小時和分鐘。查看一段時間後的結果時間。免費線上工具。">
+    <meta property="og:image" content="https://www.24to12converter.com/web-app-manifest-512x512.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.24to12converter.com/zh-tw/add-time-calculator/">
+    <meta property="twitter:title" content="時間加法計算機">
+    <meta property="twitter:description" content="在任何時間上添加或減去小時和分鐘。免費線上時間計算機。">
+    <meta property="twitter:image" content="https://www.24to12converter.com/web-app-manifest-512x512.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "時間加法計算機",
+      "description": "在任何時間上添加或減去小時和分鐘。",
+      "url": "https://www.24to12converter.com/zh-tw/add-time-calculator/",
+      "applicationCategory": "Utilities",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question", "name": "如何在一個時間上添加小時？",
+          "acceptedAnswer": { "@type": "Answer", "text": "輸入您的起始時間以及要添加的小時和分鐘。計算機會顯示結果時間。例如，在14:00上添加3小時會得到17:00（下午5:00）。" }
+        },
+        {
+          "@type": "Question", "name": "可以用這個計算機減去時間嗎？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。在小時或分鐘欄位中輸入負數來減去時間。例如，從10:00減去2小時得到08:00。" }
+        },
+        {
+          "@type": "Question", "name": "這個工具能處理跨午夜的時間嗎？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。在22:00上添加5小時會得到次日03:00。計算機會正確處理午夜循環。" }
+        },
+        {
+          "@type": "Question", "name": "時間加法有哪些常見用途？",
+          "acceptedAnswer": { "@type": "Answer", "text": "常見用途包括：計算下次用藥時間、推算航班降落時間（出發時間+飛行時長）、安排跨時區會議、以及計算烹飪或烘焙步驟的時間。" }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.24to12converter.com/zh-tw/" },
+        { "@type": "ListItem", "position": 2, "name": "時間加法計算機", "item": "https://www.24to12converter.com/zh-tw/add-time-calculator/" }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+<header class="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <div class="logo">
+                <a href="https://www.24to12converter.com/zh-tw/" class="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                    24小時制轉12小時制 <span class="text-blue-600">轉換器</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/zh-tw/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">12小時制轉換器</a>
+                <a href="/zh-tw/military-time-converter/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">軍事時間轉換器</a>
+                <a href="/zh-tw/time-chart/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">時間轉換表</a>
+                <a href="/zh-tw/guides/" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">指南</a>
+                <div class="relative">
+                    <button id="language-switcher" class="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <span>繁體中文</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                        <a href="/add-time-calculator/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                        <a href="/de/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deutsch</a>
+                        <a href="/es/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Español</a>
+                        <a href="/fr/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Français</a>
+                        <a href="/pt/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Português</a>
+                        <a href="/ja/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                        <a href="/ko/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
+                        <a href="/zh-tw/add-time-calculator/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium">繁體中文</a>
+                        <a href="/it/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Italiano</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="p-2 text-gray-600 hover:text-blue-600" aria-label="開啟導航選單">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="/zh-tw/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">12小時制轉換器</a>
+            <a href="/zh-tw/military-time-converter/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">軍事時間轉換器</a>
+            <a href="/zh-tw/time-chart/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">時間轉換表</a>
+            <a href="/zh-tw/guides/" class="block py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600">指南</a>
+            <div class="border-t border-gray-200">
+                <button id="mobile-language-switcher" class="w-full text-left py-3 px-4 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-blue-600 flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    <span class="ml-1">語言：繁體中文</span>
+                </button>
+                <div id="mobile-language-dropdown" class="hidden bg-white border-t border-gray-200">
+                <a href="/add-time-calculator/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">English</a>
+                <a href="/de/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Deutsch</a>
+                <a href="/es/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Español</a>
+                <a href="/fr/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Français</a>
+                <a href="/pt/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Português</a>
+                <a href="/ja/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">日本語</a>
+                <a href="/ko/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">한국어</a>
+                <a href="/zh-tw/add-time-calculator/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">繁體中文</a>
+                <a href="/it/" class="block py-3 px-4 text-sm font-medium text-gray-700 hover:bg-gray-50">Italiano</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <article class="py-12 md:py-16">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <nav aria-label="麵包屑導航" class="mb-8 text-sm text-slate-500">
+                <a href="/zh-tw/" class="text-blue-600 hover:underline">首頁</a><span class="mx-2">/</span><span>時間加法計算機</span>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">時間加法計算機</h1>
+            <p class="text-xl text-slate-700 mb-8">在任何時間上添加或減去小時和分鐘。<strong>輸入起始時間和要添加的時長，立即查看結果。</strong>支援24小時格式和午夜循環。</p>
+
+            <!-- Calculator -->
+            <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8 mb-10">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">起始時間</label>
+                    <input type="time" id="startTime" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="14:00">
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">添加小時</label>
+                        <input type="number" id="addHours" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="1" step="1" min="-23" max="23">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">添加分鐘</label>
+                        <input type="number" id="addMinutes" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="30" step="1" min="-59" max="59">
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-500 to-teal-600 rounded-xl p-6 text-center text-white mb-4">
+                    <p class="text-sm font-medium uppercase tracking-wider opacity-80 mb-1">結果時間</p>
+                    <p class="text-5xl md:text-6xl font-black tracking-tight" id="resultTime">15:30</p>
+                </div>
+                <p class="text-center text-sm text-slate-500" id="result12h">(下午3:30)</p>
+            </section>
+
+            <!-- How to Use -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">如何使用時間加法計算機</h2>
+                <div class="space-y-3 text-slate-700">
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold">1</span>
+                        <p class="pt-1">以24小時格式輸入<strong>起始時間</strong>（例如下午2:00輸入14:00）。</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold">2</span>
+                        <p class="pt-1">輸入要添加的<strong>小時和分鐘</strong>。使用負數來減去時間。</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm font-bold">3</span>
+                        <p class="pt-1">以24小時制和12小時制格式查看<strong>結果</strong>。跨午夜的時間會正確循環。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Examples -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">快速範例</h2>
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="w-full text-sm bg-white">
+                        <thead class="bg-slate-100 text-slate-700 uppercase text-xs">
+                            <tr><th class="px-4 py-3 text-left">起始時間</th><th class="px-4 py-3 text-left">添加</th><th class="px-4 py-3 text-left">結果（24小時制）</th><th class="px-4 py-3 text-left">結果（12小時制）</th><th class="px-4 py-3 text-left">用途</th></tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr><td class="px-4 py-3 font-medium">08:00</td><td class="px-4 py-3">+8h 0m</td><td class="px-4 py-3">16:00</td><td class="px-4 py-3">下午4:00</td><td class="px-4 py-3 text-slate-500">工作班次結束</td></tr>
+                            <tr><td class="px-4 py-3 font-medium">14:00</td><td class="px-4 py-3">+3h 30m</td><td class="px-4 py-3">17:30</td><td class="px-4 py-3">下午5:30</td><td class="px-4 py-3 text-slate-500">會議時長</td></tr>
+                            <tr><td class="px-4 py-3 font-medium">22:00</td><td class="px-4 py-3">+5h 0m</td><td class="px-4 py-3">03:00</td><td class="px-4 py-3">上午3:00</td><td class="px-4 py-3 text-slate-500">過夜航班</td></tr>
+                            <tr><td class="px-4 py-3 font-medium">06:00</td><td class="px-4 py-3">+6h 0m</td><td class="px-4 py-3">12:00</td><td class="px-4 py-3">下午12:00</td><td class="px-4 py-3 text-slate-500">用藥間隔</td></tr>
+                            <tr><td class="px-4 py-3 font-medium">09:30</td><td class="px-4 py-3">-2h 0m</td><td class="px-4 py-3">07:30</td><td class="px-4 py-3">上午7:30</td><td class="px-4 py-3 text-slate-500">減去準備時間</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Related Tools -->
+            <section class="rounded-lg border border-slate-200 bg-white p-5">
+                <h2 class="text-xl font-bold text-slate-900 mb-3">相關工具與指南</h2>
+                <div class="flex flex-wrap gap-2">
+                    <a href="/zh-tw/" class="rounded-lg border border-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50">24小時制轉12小時制轉換器</a>
+                    <a href="/zh-tw/time-duration-calculator/" class="rounded-lg border border-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50">時間計算機</a>
+                    <a href="/zh-tw/time-chart/" class="rounded-lg border border-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50">時間轉換表</a>
+                    <a href="/zh-tw/military-time-converter/" class="rounded-lg border border-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50">軍事時間轉換器</a>
+                    <a href="/zh-tw/guides/" class="rounded-lg border border-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-50">時間格式指南</a>
+                </div>
+            </section>
+        </div>
+    </article>
+</main>
+
+<footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2"><h3 class="text-2xl font-bold text-white mb-4">24to12converter<span class="text-blue-400">.com</span></h3><p class="text-gray-400 mb-6 max-w-md">快速輕鬆地將24小時制時間轉換為標準12小時制上午/下午格式。現在附帶時間計算工具。</p></div>
+            <div><h4 class="text-lg font-semibold text-white mb-4">工具</h4><ul class="space-y-3"><li><a href="/zh-tw/" class="text-gray-400 hover:text-white transition-colors duration-300">12小時制轉換器</a></li><li><a href="/zh-tw/military-time-converter/" class="text-gray-400 hover:text-white transition-colors duration-300">軍事時間轉換器</a></li><li><a href="/zh-tw/time-chart/" class="text-gray-400 hover:text-white transition-colors duration-300">時間轉換表</a></li><li><a href="/zh-tw/time-duration-calculator/" class="text-gray-400 hover:text-white transition-colors duration-300">時間計算機</a></li><li><a href="/zh-tw/add-time-calculator/" class="text-gray-400 hover:text-white transition-colors duration-300">時間加法計算機</a></li></ul></div>
+            <div><h4 class="text-lg font-semibold text-white mb-4">快速連結</h4><ul class="space-y-3"><li><a href="/zh-tw/guides/" class="text-gray-400 hover:text-white transition-colors duration-300">時間格式指南</a></li><li><a href="/zh-tw/#features" class="text-gray-400 hover:text-white transition-colors duration-300">功能</a></li><li><a href="/zh-tw/#faq" class="text-gray-400 hover:text-white transition-colors duration-300">常見問題</a></li></ul></div>
+            <div><h4 class="text-lg font-semibold text-white mb-4">公司</h4><ul class="space-y-3"><li><a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">隱私政策</a></li><li><a href="/terms.html" class="text-gray-400 hover:text-white transition-colors duration-300">服務條款</a></li></ul></div>
+            <div><h4 class="text-lg font-semibold text-white mb-4">聯絡我們</h4><div class="flex space-x-4"><a href="https://www.facebook.com/jqueryscript" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-300" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="https://x.com/jqueryscript" class="w-10 h-10 bg-black rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></a><a href="https://www.youtube.com/@jQueryScriptCSS" class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors duration-300" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a></div></div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">&copy; 2026 24to12Converter.com. 版權所有。</p>
+            <div class="flex items-center space-x-6 mt-4 md:mt-0"><span class="text-gray-400 text-sm">由 <a href="https://www.jqueryscript.net" target="_blank">jQueryScript</a> 用 ❤️ 製作</span></div>
+        </div>
+    </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var mmb=document.getElementById('mobile-menu-button'),mm=document.getElementById('mobile-menu'),
+        ls=document.getElementById('language-switcher'),ld=document.getElementById('language-dropdown'),
+        mls=document.getElementById('mobile-language-switcher'),mld=document.getElementById('mobile-language-dropdown');
+    if(mmb&&mm){mmb.addEventListener('click',function(e){e.stopPropagation();mm.classList.toggle('hidden');});}
+    if(ls&&ld){ls.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();ld.classList.toggle('hidden');});}
+    if(mls&&mld){mls.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();mld.classList.toggle('hidden');});}
+    document.addEventListener('click',function(){if(ld)ld.classList.add('hidden');if(mld)mld.classList.add('hidden');});
+
+    // Add Time Calculator
+    var startEl = document.getElementById('startTime');
+    var addH = document.getElementById('addHours');
+    var addM = document.getElementById('addMinutes');
+    var resultEl = document.getElementById('resultTime');
+    var result12El = document.getElementById('result12h');
+
+    function to12h(h, m) {
+        var suffix = h >= 12 ? '下午' : '上午';
+        var h12 = h % 12;
+        if (h12 === 0) h12 = 12;
+        return suffix + h12 + ':' + String(m).padStart(2, '0');
+    }
+
+    function calculate() {
+        var startVal = startEl.value;
+        var hAdd = parseInt(addH.value) || 0;
+        var mAdd = parseInt(addM.value) || 0;
+        if (!startVal) return;
+
+        var parts = startVal.split(':');
+        var totalMin = parseInt(parts[0]) * 60 + parseInt(parts[1]) + hAdd * 60 + mAdd;
+        // Wrap around 24 hours
+        totalMin = ((totalMin % 1440) + 1440) % 1440;
+        var h = Math.floor(totalMin / 60);
+        var m = totalMin % 60;
+
+        resultEl.textContent = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+        result12El.textContent = '(' + to12h(h, m) + ')';
+    }
+
+    startEl.addEventListener('input', calculate);
+    addH.addEventListener('input', calculate);
+    addM.addEventListener('input', calculate);
+    calculate();
+});
+</script>
+</body>
+</html>
