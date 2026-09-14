@@ -45,3 +45,10 @@ update_home_changelogs.js
 update_sitemap.js
 update_sitemap_multilingual.js
 lint-html.sh
+
+# Internal strategy / audit documents — must never be served by GitHub Pages
+GROWTH-OPPORTUNITIES.md
+PROMOTION-STRATEGY.md
+24to12converter.com-audit/
+# Local spreadsheet exports (GSC, coverage drilldowns, planning workbooks)
+*.xlsx
