@@ -60,22 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             digits = digits.substring(0, 4);
         }
 
-        // Validate hours if we have at least 2 digits
-        if (digits.length >= 2) {
-            let hours = parseInt(digits.substring(0, 2), 10);
-            if (hours > 23) {
-                digits = '23' + digits.substring(2);
-            }
-        }
-
-        // Validate minutes if we have exactly 4 digits
-        if (digits.length === 4) {
-            let minutes = parseInt(digits.substring(2, 4), 10);
-            if (minutes > 59) {
-                digits = digits.substring(0, 2) + '59';
-            }
-        }
-
+        // Out-of-range values are deliberately NOT clamped here - convert24to12()
+        // reports them. Clamping used to turn "2500" into "2300" and show 11:00 PM.
         input.value = digits;
 
         // Auto-convert when we have exactly 4 digits
@@ -162,10 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function handle24hKeyDown(e) {
         const key = e.key;
         const isDigit = /[0-9]/.test(key);
+        const isColon = key === ':';
         const isAllowedControlKey = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter'].includes(key);
         const isPaste = (e.ctrlKey || e.metaKey) && key === 'v';
 
-        if (isDigit || isAllowedControlKey || isPaste) {
+        if (isDigit || isColon || isAllowedControlKey || isPaste) {
             return; // Allow the event
         }
         
@@ -173,57 +160,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Input Listener: Formats the input value AFTER the browser has handled the keypress.
+    //    It never rewrites the digits the user typed. Out-of-range values are reported by
+    //    handleConversion()/convert24to12 instead of being silently clamped - clamping here
+    //    is what turned a typed "905" into "235" and answered "2:35 AM".
     function handle24hInputFormat() {
         const input = timeInput;
         const originalValue = input.value;
         const originalCursor = input.selectionStart;
 
-        let digits = originalValue.replace(/[^0-9]/g, '');
+        let formattedValue;
 
-        if (digits.length > 4) {
-            digits = digits.substring(0, 4);
-        }
+        if (originalValue.includes(':')) {
+            // Keep the user's own H:MM / HH:MM split (typed colon or pasted value).
+            const [hourPart, minutePart = ''] = originalValue.split(':');
+            const hours = hourPart.replace(/[^0-9]/g, '').substring(0, 2);
+            const minutes = minutePart.replace(/[^0-9]/g, '').substring(0, 2);
+            formattedValue = `${hours}:${minutes}`;
+        } else {
+            let digits = originalValue.replace(/[^0-9]/g, '');
 
-        // Only validate and format when we have complete or nearly complete input
-        if (digits.length >= 2) {
-            let hours = parseInt(digits.substring(0, 2), 10);
-            if (hours > 23) {
-                digits = '23' + digits.substring(2);
+            if (digits.length > 4) {
+                digits = digits.substring(0, 4);
             }
-        }
 
-        // Only validate and format when we have exactly 4 digits (complete time)
-        if (digits.length === 4) {
-            let hours = parseInt(digits.substring(0, 2), 10);
-            let minutes = parseInt(digits.substring(2), 10);
-            
-            // Validate hours (00-23)
-            if (hours > 23) {
-                hours = 23;
-            }
-            
-            // Validate minutes (00-59)
-            if (minutes > 59) {
-                minutes = 59;
-            }
-            
-            // Format with leading zeros
-            const hoursStr = String(hours).padStart(2, '0');
-            const minutesStr = String(minutes).padStart(2, '0');
-            
-            digits = hoursStr + minutesStr;
-        }
-
-        let formattedValue = digits;
-        // Only add colon when we have exactly 4 digits (complete time)
-        if (digits.length === 4) {
-            formattedValue = `${digits.substring(0, 2)}:${digits.substring(2)}`;
+            // Add the colon only once a complete HHMM is present. Shorter entries stay
+            // exactly as typed, so partial input is never disturbed mid-typing.
+            formattedValue = digits.length === 4
+                ? `${digits.substring(0, 2)}:${digits.substring(2)}`
+                : digits;
         }
 
         if (originalValue !== formattedValue) {
             input.value = formattedValue;
             // Adjust cursor position if a colon was added or removed
-            const newCursor = originalCursor + (formattedValue.length - originalValue.length);
+            const newCursor = Math.max(0, originalCursor + (formattedValue.length - originalValue.length));
             input.setSelectionRange(newCursor, newCursor);
         }
 
