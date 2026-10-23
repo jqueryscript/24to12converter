@@ -72,6 +72,26 @@
 
   gtag('config', 'G-YT9K7B1B12');
 </script>
+<style>
+@media (max-width: 360px) {
+  main table th, main table td { padding-left: .5rem; padding-right: .5rem; }
+}
+@media print {
+  @page { margin: 12mm; }
+  body { background: white !important; color: black !important; }
+  header, footer, #print-btn, main section:first-child p,
+  main section[aria-label="Time Conversion Chart"] > div:not(:has(table)) { display: none !important; }
+  main { padding: 0 !important; }
+  main h1 { font-size: 16pt !important; margin: 0 0 10pt !important; }
+  main section { margin: 0 !important; max-width: none !important; }
+  main .container { padding: 0 !important; max-width: none !important; }
+  main table { width: 100%; font-size: 10pt; }
+  main thead { position: static !important; display: table-header-group; }
+  main tr { break-inside: avoid; }
+  main th, main td { padding: 4pt 8pt !important; color: black !important; }
+  main a { color: black !important; text-decoration: none !important; }
+}
+</style>
 </head>
 <body class="bg-slate-50 text-slate-800 transition-colors duration-300">
 
@@ -827,7 +847,18 @@
     </footer>
 <script>
     const printBtn = document.getElementById('print-btn');
-    if (printBtn) { printBtn.addEventListener('click', () => window.print()); }
+    let lastPrint = 0;
+    if (printBtn) { printBtn.addEventListener('click', () => {
+        const now = Date.now();
+        if (now - lastPrint < 1500) return;
+        lastPrint = now;
+        window.print();
+        try {
+            if (typeof window.gtag === 'function') window.gtag('event', 'print_chart', {
+                tool: 'time_chart', language: 'en'
+            });
+        } catch (_) { /* Printing does not depend on analytics. */ }
+    }); }
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) { mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden')); }

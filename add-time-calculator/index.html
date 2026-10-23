@@ -156,25 +156,29 @@
             <!-- Calculator -->
             <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 md:p-8 mb-10">
                 <div class="mb-4">
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Starting Time</label>
-                    <input type="time" id="startTime" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="14:00">
+                    <label for="startTime" class="block text-sm font-medium text-slate-700 mb-2">Starting Time</label>
+                    <input type="time" id="startTime" aria-describedby="add-error" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="14:00">
                 </div>
                 <div class="grid sm:grid-cols-2 gap-4 mb-6">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Hours to Add</label>
-                        <input type="number" id="addHours" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="1" step="1" min="-23" max="23">
+                        <label for="addHours" class="block text-sm font-medium text-slate-700 mb-2">Hours to Add</label>
+                        <input type="number" id="addHours" aria-describedby="add-error" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="1" step="1">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Minutes to Add</label>
-                        <input type="number" id="addMinutes" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="30" step="1" min="-59" max="59">
+                        <label for="addMinutes" class="block text-sm font-medium text-slate-700 mb-2">Minutes to Add</label>
+                        <input type="number" id="addMinutes" aria-describedby="add-error" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-lg" value="30" step="1" min="-59" max="59">
                     </div>
                 </div>
 
+                <div id="add-output" role="status" aria-live="polite" aria-atomic="true">
                 <div class="bg-gradient-to-r from-green-500 to-teal-600 rounded-xl p-6 text-center text-white mb-4">
                     <p class="text-sm font-medium uppercase tracking-wider opacity-80 mb-1">Result Time</p>
                     <p class="text-5xl md:text-6xl font-black tracking-tight" id="resultTime">15:30</p>
                 </div>
                 <p class="text-center text-sm text-slate-500" id="result12h">(3:30 PM)</p>
+                <p class="mt-2 text-center text-sm text-slate-600" id="dayOffset">Same day</p>
+                <p id="add-error" class="mt-2 text-sm text-slate-600"></p>
+                </div>
             </section>
 
             <!-- How to Use -->
@@ -262,6 +266,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var addM = document.getElementById('addMinutes');
     var resultEl = document.getElementById('resultTime');
     var result12El = document.getElementById('result12h');
+    var errorEl = document.getElementById('add-error');
+    var dayEl = document.getElementById('dayOffset');
 
     function to12h(h, m) {
         var suffix = h >= 12 ? 'PM' : 'AM';
@@ -272,12 +278,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function calculate() {
         var startVal = startEl.value;
-        var hAdd = parseInt(addH.value) || 0;
-        var mAdd = parseInt(addM.value) || 0;
-        if (!startVal) return;
+        var hAdd = addH.value === '' ? 0 : Number(addH.value);
+        var mAdd = addM.value === '' ? 0 : Number(addM.value);
+        var startValid = Boolean(startVal) && startEl.validity.valid;
+        var hoursValid = addH.validity.valid && Number.isSafeInteger(hAdd);
+        var minutesValid = addM.validity.valid && Number.isSafeInteger(mAdd);
+        startEl.setAttribute('aria-invalid', String(!startValid));
+        addH.setAttribute('aria-invalid', String(!hoursValid));
+        addM.setAttribute('aria-invalid', String(!minutesValid));
+        if (!startValid || !hoursValid || !minutesValid) {
+            errorEl.textContent = !startValid ? 'Enter a valid starting time.' : 'Use whole-number hours and minutes. Minutes must be between -59 and 59.';
+            resultEl.textContent = '\u2014';
+            result12El.textContent = '';
+            dayEl.textContent = '';
+            return;
+        }
 
+        errorEl.textContent = '';
         var parts = startVal.split(':');
         var totalMin = parseInt(parts[0]) * 60 + parseInt(parts[1]) + hAdd * 60 + mAdd;
+        if (!Number.isSafeInteger(totalMin)) {
+            resultEl.textContent = '\u2014';
+            result12El.textContent = '';
+            dayEl.textContent = '';
+            errorEl.textContent = 'Time offset is too large.';
+            addH.setAttribute('aria-invalid', 'true');
+            return;
+        }
+        var dayOffset = Math.floor(totalMin / 1440);
+        dayEl.textContent = dayOffset === 0 ? 'Same day'
+            : dayOffset === 1 ? 'Next day'
+            : dayOffset === -1 ? 'Previous day'
+            : Math.abs(dayOffset) + ' days ' + (dayOffset > 0 ? 'later' : 'earlier');
         // Wrap around 24 hours
         totalMin = ((totalMin % 1440) + 1440) % 1440;
         var h = Math.floor(totalMin / 60);
