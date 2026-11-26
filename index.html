@@ -83,96 +83,29 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is 00:00 in 12-hour format?",
+      "name": "What does 24:00 mean?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "00:00 in 24-hour format is 12:00 AM in 12-hour format. This represents midnight, the start of a new day."
+        "text": "24:00 can mark midnight at the end of a day. It means the same instant as 00:00 at the start of the next day. The converter accepts 00:00 through 23:59. Use 00:00 for midnight."
       }
     },
     {
       "@type": "Question",
-      "name": "What is 12:00 in 12-hour format?",
+      "name": "What do AM and PM stand for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "12:00 in 24-hour format is 12:00 PM in 12-hour format. This represents noon, the middle of the day."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is 23:59 in 12-hour format?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "23:59 in 24-hour format is 11:59 PM in 12-hour format."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is 24:00 a valid time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "While sometimes used to signify day's end, 24:00 isn't standard 24-hour format. The day properly ends at 23:59 and begins at 00:00."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is midnight 12 AM or 12 PM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem (before midday), PM = Post Meridiem (after midday). AM covers Midnight is 12:00 AM, while noon is 12:00 PM."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the difference between 24-hour and 12-hour time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24-hour time uses 00-23 continuously, while 12-hour time uses 1-12 with AM/PM designations. 24-hour eliminates ambiguity for international use."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I convert 24-hour to 12-hour manually?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For hours 00-11: add AM (00:00→12:00 AM). For 12:00: it's 12:00 PM. For 13-23: subtract 12 and add PM (13:00→1:00 PM). Minutes stay the same."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is 00:00 called in 12 hour time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "00:00 in 24-hour format is called 12:00 AM in 12-hour time. This represents midnight, the exact moment when one day ends and the next day begins."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do we use AM/PM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM/PM is used in 12-hour time format to distinguish between morning (AM) and afternoon/evening (PM) hours. This system originated from ancient civilizations that divided the day into two 12-hour periods based on the position of the sun, making it easier to reference time without confusion between day and night hours."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does AM and PM stand for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AM = Ante Meridiem (before midday), PM = Post Meridiem (after midday). AM covers midnight to noon, PM covers noon to midnight."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do some countries use the 24-hour format?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The 24-hour clock avoids confusion between morning and evening times and is widely used in Europe, transportation, and digital systems."
+        "text": "AM stands for ante meridiem, Latin for “before noon.” PM stands for post meridiem, Latin for “after noon.” In 12-hour time, 12:00 AM is midnight and 12:00 PM is noon."
       }
     }
   ]
 }
     </script>
     <!-- Google tag (gtag.js) -->
+    <style>
+        @media (width < 400px) {
+            #conversion-chart :is(th, td) { padding-inline: 0.5rem; }
+        }
+    </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT9K7B1B12"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -264,39 +197,41 @@
                 <section aria-labelledby="main-heading">
                     <div class="text-center max-w-2xl mx-auto">
                         <h1 id="main-heading" class="text-3xl md:text-5xl font-bold tracking-tight">
-                            <span id="from-format">24-Hour</span> to <span id="to-format">12-Hour</span> Time Converter
+                            24-Hour to 12-Hour Time Converter
                         </h1>
                         <p id="sub-heading" class="mt-4 text-lg text-slate-600">
-                            Quickly and easily convert <span class="from-format-text">24-hour time</span> to the standard <span class="to-format-text">12-hour AM/PM format</span>.
+                            Convert 24-hour or military time to AM/PM, or switch to convert back.
                         </p>
                     </div>
                 </section>
 
-                <section class="max-w-md mx-auto mt-12" aria-label="Time Converter Tool">
-                    <div class="converter bg-white p-6 md:p-8 rounded-xl shadow-lg border border-slate-200">
-                        <div class="relative">
-                            <label for="time-input" class="sr-only">Time Input</label>
-                            <input type="text" id="time-input" placeholder="e.g., 18:30 or 1830" maxlength="5" class="w-full p-4 text-center text-2xl font-mono bg-slate-100 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                            <button id="swap-btn" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-slate-500 hover:text-blue-600 rounded-full hover:bg-slate-200 transition-colors" aria-label="Swap conversion direction">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left" aria-hidden="true"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                <section class="max-w-md mx-auto mt-6" aria-label="Time Converter Tool">
+                    <form id="homepage-converter-form" class="converter bg-white p-4 md:p-8 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center justify-between gap-2">
+                            <p id="conversion-direction" class="font-semibold text-slate-900" aria-live="polite" aria-atomic="true"><span id="from-format">24-Hour</span> to <span id="to-format">12-Hour</span></p>
+                            <button type="button" id="swap-btn" class="inline-flex items-center gap-2 px-3 py-3 text-sm font-semibold text-blue-700 rounded-lg hover:bg-slate-100" aria-label="Swap conversion direction" aria-describedby="conversion-direction">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                                <span>Swap</span>
                             </button>
                         </div>
-                        <button id="convert-btn" class="w-full mt-4 py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors cursor-pointer">Convert</button>
-                        <div class="result-container mt-6 text-center min-h-[60px]">
-                            <p id="result-text" class="text-3xl font-bold text-blue-600" aria-live="polite"></p>
-                            <button id="copy-btn" class="hidden mt-2 inline-flex items-center gap-2 py-2 px-4 bg-slate-200 font-medium rounded-lg hover:bg-slate-300 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <label for="time-input" class="block text-sm font-medium text-slate-700">Time to convert</label>
+                        <input type="text" id="time-input" maxlength="32" autocomplete="off" spellcheck="false" aria-describedby="time-input-hint" aria-invalid="false" class="w-full mt-1 px-4 py-3 text-center text-2xl font-mono bg-slate-100 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <p id="time-input-hint" class="mt-2 text-sm text-slate-600">Try 18:30 or 1830.</p>
+                        <button type="submit" id="convert-btn" class="w-full mt-3 py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors cursor-pointer">Convert</button>
+                        <div class="result-container mt-4 flex flex-wrap items-center justify-center gap-2">
+                            <output id="result-text" for="time-input" class="text-3xl font-bold text-blue-600" aria-label="Converted time" aria-live="polite" aria-atomic="true"></output>
+                            <button type="button" id="copy-btn" class="hidden inline-flex items-center gap-2 py-3 px-4 bg-slate-200 font-medium rounded-lg hover:bg-slate-300 cursor-pointer">
                                 <span>Copy</span>
                             </button>
                         </div>
-                        <p id="error-message" class="error text-center text-red-500 mt-2" aria-live="assertive"></p>
-                    </div>
-                    <div class="text-center mt-6 space-x-2">
+                        <p id="error-message" class="error text-center text-red-700 mt-2" aria-live="polite"></p>
+                    </form>
+                    <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
                         <span class="text-sm text-slate-500">Examples:</span>
-                        <button class="example-btn px-3 py-1 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="00:00">00:00</button>
-                        <button class="example-btn px-3 py-1 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="12:00">12:00</button>
-                        <button class="example-btn px-3 py-1 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="18:30">18:30</button>
-                        <button class="example-btn px-3 py-1 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="23:59">23:59</button>
+                        <button class="example-btn px-3 py-2 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="00:00">00:00</button>
+                        <button class="example-btn px-3 py-2 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="12:00">12:00</button>
+                        <button class="example-btn px-3 py-2 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="18:30">18:30</button>
+                        <button class="example-btn px-3 py-2 text-sm font-medium text-slate-600 bg-slate-200 rounded-full hover:bg-slate-300 transition-colors cursor-pointer" data-time="23:59">23:59</button>
                     </div>
                     <div class="max-w-2xl mx-auto mt-8 text-center">
                         <h2 class="text-lg font-bold text-slate-900 mb-4">Popular 24-hour times</h2>
@@ -314,181 +249,43 @@
             </div>
         </div>
 
-        <!-- Features Section -->
-        <div class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
             <div class="container mx-auto px-4">
-                <section id="features" aria-labelledby="features-heading">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <div class="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 mb-6">
-                            ✨ Powerful Features
+                <section id="features" class="max-w-4xl mx-auto scroll-mt-24" aria-labelledby="how-to-use-heading">
+                    <h2 id="how-to-use-heading" class="text-2xl md:text-3xl font-bold text-slate-900"><span id="how-to-use" class="scroll-mt-24">How to Convert 24-Hour Time to 12-Hour Time</span></h2>
+                    <p class="mt-3 text-slate-600">Keep the minutes the same. Use the hour to decide what to write before the colon and whether to add AM or PM.</p>
+                    <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-xl border border-slate-200 bg-white p-4">
+                            <dt class="font-semibold text-slate-900">00:00–00:59</dt>
+                            <dd class="mt-2 text-slate-600">Replace 00 with 12 and add AM. 00:30 becomes <strong>12:30 AM</strong>.</dd>
                         </div>
-                        <h2 id="features-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Everything You Need for Perfect Time Conversion</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Designed with precision and user experience in mind, our converter handles all your time format needs effortlessly.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
-                        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-                            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-switch-camera">
-                                    <path d="M11 19H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/>
-                                    <path d="M13 5h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5"/>
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="m18 22-3-3 3-3"/>
-                                    <path d="m6 2 3 3-3 3"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Bidirectional Conversion</h3>
-                            <p class="text-gray-600 leading-relaxed">Seamlessly switch between 24-hour and 12-hour formats with intuitive toggle controls. Perfect for any conversion direction.</p>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4">
+                            <dt class="font-semibold text-slate-900">01:00–11:59</dt>
+                            <dd class="mt-2 text-slate-600">Keep the hour, drop any leading zero, and add AM. 09:15 becomes <strong>9:15 AM</strong>.</dd>
                         </div>
-
-                        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-                            <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain">
-                                    <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
-                                    <path d="M9 13a4 4 0 1 0 3.973 4.182"/>
-                                    <path d="M16 21h.01"/>
-                                    <path d="M16.056 16.612a4 4 0 0 1-.056-.612 3.999 3.999 0 0 1 2-3.47"/>
-                                    <path d="M6.5 10c.5.5 1.667 1 2.5 1c.833 0 1.5-.5 2.5-.5s1.667.5 2.5.5c.833 0 1.5-.5 2.5-.5s1.4.5 2.5.5c1.1 0 2.5-.5 2.5-.5"/>
-                                    <path d="M8 5.5c1.667 0 3.5-.5 4-1.5"/>
-                                    <path d="M8.5 9c.167.333 1.5 1 2.5 1c1 0 2.5-.667 3.5-1"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Smart Input Recognition</h3>
-                            <p class="text-gray-600 leading-relaxed">Accepts any format—with colons, without colons, AM/PM variations. Our intelligent parser understands your input perfectly.</p>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4">
+                            <dt class="font-semibold text-slate-900">12:00–12:59</dt>
+                            <dd class="mt-2 text-slate-600">Keep the hour at 12 and add PM. 12:30 becomes <strong>12:30 PM</strong>.</dd>
                         </div>
-
-                        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-                            <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy">
-                                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-                                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Instant Copy & Share</h3>
-                            <p class="text-gray-600 leading-relaxed">One-click copy functionality with visual feedback. Perfect for sharing results across applications and platforms instantly.</p>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4">
+                            <dt class="font-semibold text-slate-900">13:00–23:59</dt>
+                            <dd class="mt-2 text-slate-600">Subtract 12 from the hour and add PM. 21:15 becomes <strong>9:15 PM</strong>.</dd>
                         </div>
-                    </div>
+                    </dl>
                 </section>
-            </div>
-        </div>
-
-        <!-- How To Use Section -->
-        <div class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <section id="how-to-use" aria-labelledby="how-to-use-heading">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <div class="inline-flex items-center rounded-full bg-green-100 px-4en-100 px-4 py-2 text-sm font-medium text-green-700 mb-6">
-                            🚀 Quick Start
-                        </div>
-                        <h2 id="how-to-use-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Convert Time in Seconds</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our intuitive design makes time conversion effortless. Follow these simple steps to get accurate results instantly.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
-                        <div class="relative group">
-                            <div class="absolute -left-4 top-14 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 md:block hidden"></div>
-                            <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                1
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Select Conversion Mode</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">Choose between 24-hour to 12-hour or vice versa with the intuitive toggle switch. The interface adapts instantly.</p>
-                        </div>
-
-                        <div class="relative group">
-                            <div class="absolute -left-4 top-14 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 md:block hidden"></div>
-                            <div class="absolute -right-4 top-14 w-8 h-0.5 bg-gradient-to-r from-blue-600 to-blue-400 md:block hidden"></div>
-                            <div class="bg-gradient-to-br from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                2
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Enter Your Time</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">Type any time format—our smart parser understands colons, no colons, AM/PM variations. Results update in real-time.</p>
-                        </div>
-
-                        <div class="relative group">
-                            <div class="absolute -right-4 top-14 w-8 h-0.5 bg-gradient-to-r from-blue-600 to-blue-400 md:block hidden"></div>
-                            <div class="bg-gradient-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                3
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Copy & Use Results</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">One-click copy with visual confirmation. Perfect for schedules, communications, and any application needing precise time.</p>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-12">
-                        <a href="#converter" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition-colors duration-300 cursor-pointer">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                            Start Converting Now
-                        </a>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <!-- Use Cases Section -->
-        <div class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-            <div class="container mx-auto px-4">
-                <section id="use-cases" aria-labelledby="use-cases-heading">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <div class="inline-flex items-center rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700 mb-6">
-                            🌍 Perfect For Everyone
-                        </div>
-                        <h2 id="use-cases-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Trusted by Professionals Worldwide</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Whether you're traveling across time zones or working with international teams, our converter simplifies time communication for everyone.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-16">
-                        <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane">
-                                    <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
-                                </svg>
-                            </div>
-                            <h3 class="font-semibold text-gray-900 mb-2">International Travelers</h3>
-                            <p class="text-gray-600 text-sm">Convert flight schedules, train timetables, and international bookings with precision and ease.</p>
-                        </div>
-
-                        <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 hover:border-green-300 transition-all duration-300 hover:shadow-lg">
-                            <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase">
-                                    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                                    <rect width="20" height="14" x="2" y="6" rx="2"/>
-                                </svg>
-                            </div>
-                            <h3 class="font-semibold text-gray-900 mb-2">Global Professionals</h3>
-                            <p class="text-gray-600 text-sm">Schedule meetings across time zones and interpret international deadlines without confusion.</p>
-                        </div>
-
-                        <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 hover:border-purple-300 transition-all duration-300 hover:shadow-lg">
-                            <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap">
-                                    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
-                                    <path d="M22 10v6"/>
-                                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
-                                </svg>
-                            </div>
-                            <h3 class="font-semibold text-gray-900 mb-2">Students & Educators</h3>
-                            <p class="text-gray-600 text-sm">Learn and teach time concepts with an intuitive tool that makes conversion accessible to all ages.</p>
-                        </div>
-
-                        <a href="/military-time-converter/" class="group block bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 hover:border-red-300 transition-all duration-300 hover:shadow-lg hover:bg-gray-50">
-                            <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-lg flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield">
-                                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
-                                </svg>
-                            </div>
-                            <h3 class="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Military & Healthcare</h3>
-                            <p class="text-gray-600 text-sm">Essential for professionals using 24-hour time in military, medical, and emergency services contexts.</p>
-                            <div class="mt-4 text-blue-600 text-sm font-medium group-hover:text-blue-700 transition-colors">
-                                Try Military Time Converter →
-                            </div>
-                        </a>
+                <div id="use-cases" class="max-w-4xl mx-auto mt-8 grid gap-6 sm:grid-cols-2 scroll-mt-24">
+                    <section>
+                        <h2 class="text-xl font-semibold text-slate-900">Military Time to Standard Time</h2>
+                        <p class="mt-2 text-slate-600">The first two digits are the hour and the last two are the minutes. Type 1830 directly into the converter, or read it as 18:30. Both give 6:30 PM.</p>
+                    </section>
+                    <section>
+                        <h2 class="text-xl font-semibold text-slate-900">Convert AM/PM to 24-Hour Time</h2>
+                        <p class="mt-2 text-slate-600">Select Swap and enter a time such as 6:30 PM. To convert by hand, use 00 for 12 AM and 12 for 12 PM. Keep all other AM hours and add 12 to all other PM hours. Use two digits for the hour and keep the minutes the same.</p>
+                    </section>
                 </div>
-                </section>
             </div>
         </div>
-        
+
         <!-- Conversion Chart Section -->
         <div class="py-16 md:py-24">
             <div class="container mx-auto px-4">
@@ -900,96 +697,15 @@
                             ❓ Need Help?
                         </div>
                         <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Find quick answers to common questions about time conversion and our tool's functionality.</p>
                     </div>
-
                     <div class="space-y-4">
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What is 00:00 in 12-hour format?
-                            </h3>
-                            <p class="text-gray-600 pl-9">00:00 in 24-hour format is 12:00 AM in 12-hour format. This represents midnight, the start of a new day.</p>
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <h3 class="font-semibold text-gray-900 text-lg">What does 24:00 mean?</h3>
+                            <p class="mt-2 text-gray-600">24:00 can mark midnight at the end of a day. It means the same instant as 00:00 at the start of the next day. The converter accepts 00:00 through 23:59. Use 00:00 for midnight.</p>
                         </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What is 12:00 in 12-hour format?
-                            </h3>
-                            <p class="text-gray-600 pl-9">12:00 in 24-hour format is 12:00 PM in 12-hour format. This represents noon, the middle of the day.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What is 23:59 in 12-hour format?
-                            </h3>
-                            <p class="text-gray-600 pl-9">23:59 in 24-hour format is 11:59 PM in 12-hour format.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                Is 24:00 a valid time?
-                            </h3>
-                            <p class="text-gray-600 pl-9">While sometimes used to signify day's end, 24:00 isn't standard 24-hour format. The day properly ends at 23:59 and begins at 00:00.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                Is midnight 12 AM or 12 PM?
-                            </h3>
-                            <p class="text-gray-600 pl-9">AM = Ante Meridiem (before midday), PM = Post Meridiem (after midday). AM covers Midnight is 12:00 AM, while noon is 12:00 PM.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What's the difference between 24-hour and 12-hour time?
-                            </h3>
-                            <p class="text-gray-600 pl-9">24-hour time uses 00-23 continuously, while 12-hour time uses 1-12 with AM/PM designations. 24-hour eliminates ambiguity for international use.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                How do I convert 24-hour to 12-hour manually?
-                            </h3>
-                            <p class="text-gray-600 pl-9">For hours 00-11: add AM (00:00→12:00 AM). For 12:00: it's 12:00 PM. For 13-23: subtract 12 and add PM (13:00→1:00 PM). Minutes stay the same.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What is 00:00 called in 12 hour time?
-                            </h3>
-                            <p class="text-gray-600 pl-9">00:00 in 24-hour format is called 12:00 AM in 12-hour time. This represents midnight, the exact moment when one day ends and the next day begins.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                Why do we use AM/PM?
-                            </h3>
-                            <p class="text-gray-600 pl-9">AM/PM is used in 12-hour time format to distinguish between morning (AM) and afternoon/evening (PM) hours. This system originated from ancient civilizations that divided the day into two 12-hour periods based on the position of the sun, making it easier to reference time without confusion between day and night hours.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                What does AM and PM stand for?
-                            </h3>
-                            <p class="text-gray-600 pl-9">AM = Ante Meridiem (before midday), PM = Post Meridiem (after midday). AM covers midnight to noon, PM covers noon to midnight.</p>
-                        </div>
-
-                        <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-300 hover:shadow-lg">
-                            <h3 class="font-semibold text-gray-900 text-lg mb-3 flex items-center">
-                                <span class="w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">Q</span>
-                                Why do some countries use the 24-hour format?
-                            </h3>
-                            <p class="text-gray-600 pl-9">The 24-hour clock avoids confusion between morning and evening times and is widely used in Europe, transportation, and digital systems.</p>
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <h3 class="font-semibold text-gray-900 text-lg">What do AM and PM stand for?</h3>
+                            <p class="mt-2 text-gray-600">AM stands for ante meridiem, Latin for “before noon.” PM stands for post meridiem, Latin for “after noon.” In 12-hour time, 12:00 AM is midnight and 12:00 PM is noon.</p>
                         </div>
                     </div>
                 </section>
@@ -1004,7 +720,7 @@
                 <!-- Brand -->
                 <div class="lg:col-span-2">
                     <h3 class="text-2xl font-bold text-white mb-4">24to12converter<span class="text-blue-400">.com</span></h3>
-                    <p class="text-gray-400 mb-6 max-w-md">Quickly and easily convert 24-hour time to the standard 12-hour AM/PM format. Perfect for travelers, professionals, students, and anyone working with different time formats.</p>
+                    <p class="text-gray-400 mb-6 max-w-md">Convert 24-hour, AM/PM, and military time.</p>
                 </div>
 
                 <!-- Tools -->
@@ -1023,9 +739,8 @@
                     <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
                     <ul class="space-y-3">
                         <li><a href="/guides/" class="text-gray-400 hover:text-white transition-colors duration-300">Time Format Guides</a></li>
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
-                        <li><a href="#how-to-use" class="text-gray-400 hover:text-white transition-colors duration-300">How It Works</a></li>
-                        <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors duration-300">Use Cases</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">Conversion Rules</a></li>
+                        <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors duration-300">Military Time and AM/PM</a></li>
                         <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors duration-300">FAQ</a></li>
                         <li><a href="#conversion-chart" class="text-gray-400 hover:text-white transition-colors duration-300">Conversion Chart</a></li>
                     </ul>
@@ -1074,7 +789,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v08242025"></script>
+    <script src="script.js?v20261126"></script>
     <script>
     // Language switcher functionality
     document.addEventListener('DOMContentLoaded', function() {

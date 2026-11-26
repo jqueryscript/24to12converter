@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyBtn = document.getElementById('copy-btn');
     const errorMessage = document.getElementById('error-message');
     const swapBtn = document.getElementById('swap-btn');
+    const homepageForm = document.getElementById('homepage-converter-form');
+    const inputHint = document.getElementById('time-input-hint');
 
     // --- UI Text Elements (may not exist on all pages) ---
     const fromFormat = document.getElementById('from-format');
@@ -242,6 +244,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- UI Update Logic ---
     function updateUI() {
         clearAll();
+        updateExamples(is24to12
+            ? ['00:00', '12:00', '18:30', '23:59']
+            : ['12:00 AM', '12:00 PM', '6:30 PM', '11:59 PM']);
+        if (homepageForm) {
+            fromFormat.textContent = is24to12 ? ui.f24 : ui.f12;
+            toFormat.textContent = is24to12 ? ui.f12 : ui.f24;
+            inputHint.textContent = is24to12 ? 'Try 18:30 or 1830.' : 'Try 6:30 PM or 12:00 AM.';
+            return;
+        }
+
         // Remove all previous input listeners
         timeInput.removeEventListener('keydown', handle24hKeyDown);
         timeInput.removeEventListener('input', handle24hInputFormat);
@@ -254,7 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (subHeadingTo) subHeadingTo.textContent = ui.format12;
             timeInput.placeholder = ui.example24;
             timeInput.maxLength = 32;
-            if (exampleBtns.length > 0) updateExamples(['00:00', '12:00', '18:30', '23:59']);
             // Add listeners for 24h mode
             timeInput.addEventListener('keydown', handle24hKeyDown);
             timeInput.addEventListener('input', handle24hInputFormat);
@@ -265,7 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (subHeadingTo) subHeadingTo.textContent = ui.format24;
             timeInput.placeholder = ui.example12;
             timeInput.maxLength = 32;
-            if (exampleBtns.length > 0) updateExamples(['12:00 AM', '12:00 PM', '6:30 PM', '11:59 PM']);
             // Add listener for 12h mode
             timeInput.addEventListener('input', handle12hInput);
         }
@@ -290,9 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timeInput.value = '';
         resultText.textContent = '';
         copyBtn.classList.add('hidden');
-        if (errorMessage) {
-            errorMessage.textContent = '';
-        }
+        clearError();
     }
 
     // --- Input Handling ---
@@ -342,6 +350,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function handleHomepageInput() {
+        const value = timeInput.value.trim();
+        // Leave partial times alone while typing. Convert also accepts the existing shorthand.
+        const isPartial = is24to12
+            ? /^(?:\d{0,3}|\d{1,2}\s*:\s*\d?)$/.test(value)
+            : /^(?:(?:\d{1,4}|\d{1,2}\s*:\s*\d{0,2})\s*[ap]?)?$/i.test(value);
+        if (isPartial) {
+            displayResult('');
+            clearError();
+            return;
+        }
+        handleConversion();
+    }
+
     // --- Core Conversion Logic ---
     function handleConversion() {
         const input = timeInput.value.trim();
@@ -360,7 +382,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (result.error) {
-            showError(result.error);
+            if (homepageForm) {
+                timeInput.setAttribute('aria-invalid', 'true');
+                timeInput.setAttribute('aria-describedby', 'time-input-hint error-message');
+            }
+            showError(homepageForm && is24to12 ? 'Enter a time from 00:00 to 23:59.' : result.error);
             displayResult('');
         } else {
             clearError();
@@ -425,6 +451,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function clearError() {
+        if (homepageForm) {
+            timeInput.setAttribute('aria-invalid', 'false');
+            timeInput.setAttribute('aria-describedby', 'time-input-hint');
+        }
         if (errorMessage) {
             errorMessage.textContent = '';
         }
@@ -438,12 +468,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (convertBtn) {
+    if (homepageForm) {
+        homepageForm.addEventListener('submit', event => {
+            event.preventDefault();
+            handleConversion();
+            if (timeInput.getAttribute('aria-invalid') === 'true') timeInput.focus();
+        });
+        timeInput.addEventListener('input', handleHomepageInput);
+    } else if (convertBtn) {
         convertBtn.addEventListener('click', handleConversion);
     }
     if (timeInput) {
         timeInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' && !homepageForm) {
                 e.preventDefault(); // Prevent form submission
                 handleConversion();
             }
@@ -456,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (timeInput) {
                 timeInput.value = btn.dataset.time;
                 handleConversion();
-                timeInput.focus();
+                if (!homepageForm) timeInput.focus();
             }
         });
     });
@@ -487,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (timeInput) {
+    if (timeInput && !homepageForm) {
         timeInput.addEventListener('paste', (event) => {
             const text = event.clipboardData && event.clipboardData.getData('text');
             if (!text) return;
